@@ -1,7 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export const Hero = () => {
+    const { t } = useLanguage()
+    
     return (
         <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-cyan-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,39 +41,39 @@ export const Hero = () => {
                             </div>
                             <div className="text-sm">
                                 <span className="font-bold text-primary">5</span>
-                                <span className="text-muted-foreground ml-1">Expert Doctors</span>
+                                <span className="text-muted-foreground ml-1">{t("hero.expertDoctors")}</span>
                             </div>
                         </div>
 
                         <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
-                            Quality Healthcare in <span className="text-secondary">Muzaffarpur</span>
+                            {t("hero.title")} <span className="text-secondary">{t("hero.location")}</span>
                         </h1>
 
                         <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                            Multi-specialty clinic with experienced doctors. 24/7 Emergency Care, Modern Facilities, and Expert Medical Services under one roof.
+                            {t("hero.description")}
                         </p>
 
                         <div className="flex flex-wrap gap-4 mb-12">
                             <Link href="/appointment" className="btn-secondary">
-                                Book Appointment
+                                {t("hero.bookAppointment")}
                             </Link>
                             <Link href="tel:+919771447716" className="btn-outline">
-                                Emergency: 9771447716
+                                {t("hero.emergencyCall")}: 9771447716
                             </Link>
                         </div>
 
                         <div className="flex items-center gap-8 pt-8 border-t border-gray-200">
                             <div>
                                 <div className="text-2xl font-bold text-primary">5</div>
-                                <div className="text-sm text-muted-foreground">Doctors</div>
+                                <div className="text-sm text-muted-foreground">{t("hero.statsDoctor")}</div>
                             </div>
                             <div>
-                                <div className="text-2xl font-bold text-primary">Modern</div>
-                                <div className="text-sm text-muted-foreground">Facilities</div>
+                                <div className="text-2xl font-bold text-primary">{t("hero.statsModern")}</div>
+                                <div className="text-sm text-muted-foreground">{t("hero.statsFacilities")}</div>
                             </div>
                             <div>
                                 <div className="text-2xl font-bold text-secondary">24/7</div>
-                                <div className="text-sm text-muted-foreground">Emergency</div>
+                                <div className="text-sm text-muted-foreground">{t("hero.statsEmergency")}</div>
                             </div>
                         </div>
                     </div>
@@ -93,8 +98,8 @@ export const Hero = () => {
                                     </svg>
                                 </div>
                                 <div>
-                                    <div className="font-bold text-primary">Expert Care</div>
-                                    <div className="text-sm text-muted-foreground">24/7 Support Available</div>
+                                    <div className="font-bold text-primary">{t("hero.expertCare")}</div>
+                                    <div className="text-sm text-muted-foreground">{t("hero.supportAvailable")}</div>
                                 </div>
                             </div>
                         </div>

@@ -1,45 +1,51 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useLanguage } from "@/contexts/LanguageContext"
 
-const doctors = [
+const getDoctors = (t: (key: string) => string) => [
     {
-        name: "Dr. Neetu Shah",
-        role: "Cardiologist",
+        name: t("doctors.doctor1Name"),
+        role: t("doctors.doctor1Role"),
         image: "/images/doctor-1.png",
     },
     {
-        name: "Dr. Nayra Patel",
-        role: "Neurologist",
+        name: t("doctors.doctor2Name"),
+        role: t("doctors.doctor2Role"),
         image: "/images/doctor-2.png",
     },
     {
-        name: "Dr. Ritika Sharma",
-        role: "Radiologist",
+        name: t("doctors.doctor3Name"),
+        role: t("doctors.doctor3Role"),
         image: "/images/doctor-3.png",
     },
     {
-        name: "Dr. Nitya Desai",
-        role: "Dentist",
+        name: t("doctors.doctor4Name"),
+        role: t("doctors.doctor4Role"),
         image: "/images/doctor-3.png",
     },
 ]
 
 export const Doctors = () => {
+    const { t } = useLanguage()
+    const doctors = getDoctors(t)
+    
     return (
         <section id="doctors" className="py-16 section-light">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto mb-12">
                     <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-4">
-                        OUR MEDICAL TEAM
+                        {t("doctors.title")}
                     </span>
                     <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-                        Meet Our Specialists
+                        {t("doctors.subtitle")}
                     </h2>
                     <p className="text-muted-foreground mb-8">
-                        Our team of highly qualified doctors and surgeons is dedicated to providing the best medical care with expertise and compassion.
+                        {t("doctors.description")}
                     </p>
                     <Link href="/doctors" className="btn-outline inline-block">
-                        View All Doctors
+                        {t("doctors.viewProfile")}
                     </Link>
                 </div>
 

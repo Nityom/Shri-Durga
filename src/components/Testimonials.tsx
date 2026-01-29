@@ -4,32 +4,35 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { ArrowLeft, ArrowRight, Star } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
-const testimonials = [
+const getTestimonials = (t: (key: string) => string) => [
     {
         id: 1,
-        name: "Rajesh Kumar",
-        role: "Cardiac Patient",
-        quote: "The cardiology team at Shri Durga Hospital saved my life. From the emergency room to recovery, the care was exceptional. I am forever grateful to Dr. Shah and her team.",
+        name: t("testimonials.patient1Name"),
+        role: t("testimonials.patient1Role"),
+        quote: t("testimonials.patient1Quote"),
         rating: 5,
     },
     {
         id: 2,
-        name: "Priya Singh",
-        role: "Maternity Patient",
-        quote: "Delivering my baby at Shri Durga Hospital was a wonderful experience. The nurses were so supportive, and the facilities were world-class. Highly recommended for expecting mothers.",
+        name: t("testimonials.patient2Name"),
+        role: t("testimonials.patient2Role"),
+        quote: t("testimonials.patient2Quote"),
         rating: 5,
     },
     {
         id: 3,
-        name: "Amit Patel",
-        role: "Orthopedic Patient",
-        quote: "After my knee replacement surgery here, I was walking within days. The physiotherapy department is excellent and helped me get back on my feet quickly.",
+        name: t("testimonials.patient3Name"),
+        role: t("testimonials.patient3Role"),
+        quote: t("testimonials.patient3Quote"),
         rating: 5,
     }
 ]
 
 export const Testimonials = () => {
+    const { t } = useLanguage()
+    const testimonials = getTestimonials(t)
     const [currentIndex, setCurrentIndex] = useState(0)
     const [direction, setDirection] = useState(0)
 
@@ -71,7 +74,7 @@ export const Testimonials = () => {
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="text-center max-w-4xl mx-auto">
                     <h2 className="text-3xl lg:text-4xl font-bold text-white font-serif mb-12">
-                        Patient Success Stories
+                        {t("testimonials.subtitle")}
                     </h2>
 
                     <div className="relative min-h-[300px] flex flex-col justify-center">

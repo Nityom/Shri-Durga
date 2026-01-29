@@ -6,71 +6,80 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { Calendar, Clock, ArrowRight, User } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
-const blogPosts = [
+const getBlogPosts = (t: (key: string) => string) => [
     {
         slug: "heart-health-tips",
-        title: "10 Essential Tips for a Healthy Heart",
-        excerpt: "Learn how to maintain a healthy heart with these expert-backed tips from our cardiology department.",
+        title: t("blog.post1Title"),
+        excerpt: t("blog.post1Excerpt"),
         image: "/images/blog-1.jpg",
-        category: "Heart Health",
-        author: "Dr. Vishal Kumar",
-        date: "Dec 5, 2024",
-        readTime: "5 min read"
+        category: t("blog.categoryHeart"),
+        author: t("doctor.vishalKumar"),
+        date: t("blog.post1Date"),
+        readTime: t("blog.post1ReadTime")
     },
     {
         slug: "diabetes-management",
-        title: "Managing Diabetes: A Comprehensive Guide",
-        excerpt: "Everything you need to know about managing diabetes effectively and living a healthy life.",
+        title: t("blog.post2Title"),
+        excerpt: t("blog.post2Excerpt"),
         image: "/images/blog-2.jpg",
-        category: "Diabetes",
-        author: "Dr. (Mrs.) Shweta",
-        date: "Dec 3, 2024",
-        readTime: "8 min read"
+        category: t("blog.categoryDiabetes"),
+        author: t("doctor.shweta"),
+        date: t("blog.post2Date"),
+        readTime: t("blog.post2ReadTime")
     },
     {
         slug: "mental-health-awareness",
-        title: "Understanding Mental Health: Breaking the Stigma",
-        excerpt: "Mental health is just as important as physical health. Learn how to take care of your mental well-being.",
+        title: t("blog.post3Title"),
+        excerpt: t("blog.post3Excerpt"),
         image: "/images/blog-3.jpg",
-        category: "Mental Health",
-        author: "Dr. Siddhartha",
-        date: "Dec 1, 2024",
-        readTime: "6 min read"
+        category: t("blog.categoryMental"),
+        author: t("doctor.siddhartha"),
+        date: t("blog.post3Date"),
+        readTime: t("blog.post3ReadTime")
     },
     {
         slug: "child-nutrition",
-        title: "Nutrition Guide for Growing Children",
-        excerpt: "Proper nutrition is crucial for your child's growth and development. Here's what you need to know.",
+        title: t("blog.post4Title"),
+        excerpt: t("blog.post4Excerpt"),
         image: "/images/blog-4.jpg",
-        category: "Pediatrics",
-        author: "Dr. Siddhartha",
-        date: "Nov 28, 2024",
-        readTime: "7 min read"
+        category: t("blog.categoryPediatrics"),
+        author: t("doctor.siddhartha"),
+        date: t("blog.post4Date"),
+        readTime: t("blog.post4ReadTime")
     },
     {
         slug: "bone-health",
-        title: "Protecting Your Bones as You Age",
-        excerpt: "Learn about osteoporosis prevention and how to maintain strong bones throughout your life.",
+        title: t("blog.post5Title"),
+        excerpt: t("blog.post5Excerpt"),
         image: "/images/blog-5.jpg",
-        category: "Orthopedics",
-        author: "Dr. Sumit Kumar",
-        date: "Nov 25, 2024",
-        readTime: "5 min read"
+        category: t("blog.categoryOrthopedics"),
+        author: t("doctor.sumitKumar"),
+        date: t("blog.post5Date"),
+        readTime: t("blog.post5ReadTime")
     },
     {
         slug: "cancer-prevention",
-        title: "Early Detection: Your Best Defense Against Cancer",
-        excerpt: "Understanding the importance of regular screenings and early cancer detection.",
+        title: t("blog.post6Title"),
+        excerpt: t("blog.post6Excerpt"),
         image: "/images/blog-6.jpg",
-        category: "Oncology",
-        author: "Dr. Sunita Reddy",
-        date: "Nov 22, 2024",
-        readTime: "6 min read"
+        category: t("blog.categoryOncology"),
+        author: t("doctor.sunitaReddy"),
+        date: t("blog.post6Date"),
+        readTime: t("blog.post6ReadTime")
     }
 ]
 
-const categories = ["All", "Heart Health", "Diabetes", "Mental Health", "Pediatrics", "Orthopedics", "Oncology"]
+const getCategories = (t: (key: string) => string) => [
+    t("blogPage.allCategories"),
+    t("blog.categoryHeart"),
+    t("blog.categoryDiabetes"),
+    t("blog.categoryMental"),
+    t("blog.categoryPediatrics"),
+    t("blog.categoryOrthopedics"),
+    t("blog.categoryOncology")
+]
 
 // Container animation for stagger effect
 const containerVariants = {
@@ -93,6 +102,10 @@ const itemVariants = {
 }
 
 export default function BlogPage() {
+    const { t } = useLanguage()
+    const blogPosts = getBlogPosts(t)
+    const categories = getCategories(t)
+
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
@@ -107,13 +120,13 @@ export default function BlogPage() {
                         className="text-center max-w-4xl mx-auto"
                     >
                         <span className="inline-block py-2 px-4 rounded-full bg-white text-primary text-sm font-semibold mb-4 shadow-sm">
-                            HEALTH BLOG
+                            {t("blogPage.badge")}
                         </span>
                         <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
-                            Health Tips & Medical Insights
+                            {t("blogPage.title")}
                         </h1>
                         <p className="text-lg text-muted-foreground">
-                            Stay informed with the latest health news, tips, and insights from our expert medical team.
+                            {t("blogPage.description")}
                         </p>
                     </motion.div>
                 </div>
@@ -187,7 +200,7 @@ export default function BlogPage() {
             {/* Blog Grid */}
             <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-primary mb-12">Latest Articles</h2>
+                    <h2 className="text-3xl font-bold text-primary mb-12">{t("blog.latestArticles")}</h2>
                     <motion.div
                         className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
                         variants={containerVariants}
@@ -235,35 +248,35 @@ export default function BlogPage() {
                     {/* Load More */}
                     <div className="text-center mt-12">
                         <button className="btn-outline px-8 py-4 rounded-full font-bold inline-flex items-center gap-2">
-                            Load More Articles <ArrowRight size={18} />
+                            {t("blog.loadMore")} <ArrowRight size={18} />
                         </button>
                     </div>
                 </div>
             </section>
 
             {/* Newsletter */}
-            <section className="py-16">
+            {/* <section className="py-16">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="bg-primary rounded-3xl p-10 lg:p-16 text-center">
                         <h2 className="text-3xl lg:text-4xl font-bold text-white font-serif mb-4">
-                            Subscribe to Our Newsletter
+                            {t("blog.newsletterTitle")}
                         </h2>
                         <p className="text-white/90 mb-8 max-w-xl mx-auto">
-                            Get the latest health tips and medical insights delivered straight to your inbox.
+                            {t("blog.newsletterDescription")}
                         </p>
                         <form className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                             <input
                                 type="email"
-                                placeholder="Enter your email"
+                                placeholder={t("blog.emailPlaceholder")}
                                 className="flex-1 px-6 py-4 rounded-full border-0 outline-none focus:ring-2 focus:ring-secondary bg-white text-[#2C3E50]"
                             />
                             <button type="submit" className="btn-secondary px-8 py-4 rounded-full font-bold whitespace-nowrap">
-                                Subscribe
+                                {t("blog.subscribe")}
                             </button>
                         </form>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             <Footer />
         </main>

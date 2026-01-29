@@ -6,61 +6,69 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { Star, Phone, Calendar } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
-const doctors = [
+const getDoctors = (t: (key: string) => string) => [
     {
         id: "dr-vishal-kumar",
-        name: "Dr. Vishal Kumar",
-        specialty: "General Surgery",
-        qualification: "MBBS, MS (General Surgeon)",
-        experience: "Expert Surgeon",
+        name: t("doctor.vishalKumar"),
+        specialty: t("services.generalSurgery"),
+        qualification: t("service.generalSurgeryDoctor"),
+        experience: t("doctor.expertSurgeon"),
         image: "/images/doctor-1.png",
         rating: 4.9,
         reviews: 150
     },
     {
         id: "dr-shweta",
-        name: "Dr. (Mrs.) Shweta",
-        specialty: "Obstetrics & Gynecology",
-        qualification: "MBBS, MS (Obstetrician & Gynecologist)",
-        experience: "Specialist",
+        name: t("doctor.shweta"),
+        specialty: t("services.gynecology"),
+        qualification: t("service.gynecologyDoctor"),
+        experience: t("doctor.specialist"),
         image: "/images/doctor-2.png",
         rating: 4.9,
         reviews: 180
     },
     {
         id: "dr-siddhartha",
-        name: "Dr. Siddhartha",
-        specialty: "Pediatrics",
-        qualification: "MBBS, MD (Pediatrician)",
-        experience: "Child Specialist",
+        name: t("doctor.siddhartha"),
+        specialty: t("services.pediatrics"),
+        qualification: t("service.pediatricsDoctor"),
+        experience: t("doctor.childSpecialist"),
         image: "/images/doctor-3.png",
         rating: 4.8,
         reviews: 120
     },
     {
         id: "dr-vijay-singh",
-        name: "Dr. Vijay Singh",
-        specialty: "Anesthesia & Critical Care",
-        qualification: "MBBS, MD (Anesthesia & Critical Care)",
-        experience: "Critical Care Specialist",
+        name: t("doctor.vijaySingh"),
+        specialty: t("services.anesthesia"),
+        qualification: t("service.anesthesiaDoctor"),
+        experience: t("doctor.criticalCareSpecialist"),
         image: "/images/doctor-4.png",
         rating: 4.8,
         reviews: 100
     },
     {
         id: "dr-sumit-kumar",
-        name: "Dr. Sumit Kumar",
-        specialty: "Orthopedic Surgery",
-        qualification: "MBBS, MS (Orthopedic Surgeon)",
-        experience: "Orthopedic Specialist",
+        name: t("doctor.sumitKumar"),
+        specialty: t("services.orthopedics"),
+        qualification: t("service.orthopedicsDoctor"),
+        experience: t("doctor.orthopedicSpecialist"),
         image: "/images/doctor-5.png",
         rating: 4.9,
         reviews: 140
     },
 ]
 
-const specialties = ["All", "General Surgery", "Obstetrics & Gynecology", "Pediatrics", "Anesthesia & Critical Care", "Orthopedics"]
+const getSpecialties = (t: (key: string) => string) => [
+    t("doctorsPage.allSpecialties"), 
+    t("services.generalSurgery"), 
+    t("services.gynecology"), 
+    t("services.pediatrics"), 
+    t("services.anesthesia"), 
+    t("services.orthopedics")
+]
 
 // Container animation for stagger effect
 const containerVariants = {
@@ -83,6 +91,10 @@ const itemVariants = {
 }
 
 export default function DoctorsPage() {
+    const { t } = useLanguage()
+    const doctors = getDoctors(t)
+    const specialties = getSpecialties(t)
+    
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
@@ -97,13 +109,13 @@ export default function DoctorsPage() {
                         className="text-center max-w-4xl mx-auto"
                     >
                         <span className="inline-block py-2 px-4 rounded-full bg-white text-primary text-sm font-semibold mb-4 shadow-sm">
-                            OUR TEAM
+                            {t("doctorsPage.badge")}
                         </span>
                         <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
-                            Meet Our Expert Doctors
+                            {t("doctorsPage.title")}
                         </h1>
                         <p className="text-lg text-muted-foreground">
-                            Our team of highly qualified specialists brings decades of combined experience to provide you with the best medical care.
+                            {t("doctorsPage.description")}
                         </p>
                     </motion.div>
                 </div>
@@ -171,7 +183,7 @@ export default function DoctorsPage() {
                                                     {doctor.experience}
                                                 </span>
                                                 <span className="text-sm text-muted-foreground">
-                                                    {doctor.reviews} reviews
+                                                    {doctor.reviews} {t("doctorsPage.reviews")}
                                                 </span>
                                             </div>
                                         </div>
@@ -187,18 +199,18 @@ export default function DoctorsPage() {
             <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="bg-primary rounded-3xl p-10 lg:p-16 text-center">
-                        <h2 className="text-3xl lg:text-4xl font-bold text-white font-serif mb-4">
-                            Can't Find Your Specialist?
+                        <h2 className="text-3xl lg:text-4xl font-bold font-serif mb-4" style={{ color: '#ffffff' }}>
+                            {t("cta.title")}
                         </h2>
                         <p className="text-white/90 mb-8 max-w-xl mx-auto">
-                            Call our helpline and we'll connect you with the right doctor for your needs.
+                            {t("cta.description")}
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="tel:+919771447716" className="btn-secondary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 cursor-pointer">
-                                <Phone size={18} /> Call Helpline
+                                <Phone size={18} /> {t("contactPage.phoneTitle")}
                             </Link>
-                            <Link href="#" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer">
-                                <Calendar size={18} /> Book Online
+                            <Link href="/appointment" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer">
+                                <Calendar size={18} /> {t("nav.bookAppointment")}
                             </Link>
                         </div>
                     </div>

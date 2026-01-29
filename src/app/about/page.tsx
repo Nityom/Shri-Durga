@@ -1,42 +1,49 @@
+"use client"
+
 import { Navbar } from "@/components/Navbar"
 import { Footer } from "@/components/Footer"
 import Image from "next/image"
 import Link from "next/link"
+import { useLanguage } from "@/contexts/LanguageContext"
 
-const stats = [
-    { value: "5", label: "Expert Doctors" },
-    { value: "24/7", label: "Emergency Care" },
-    { value: "Modern", label: "Medical Facilities" },
-    { value: "Trusted", label: "Healthcare" }
+const getStats = (t: (key: string) => string) => [
+    { value: "5", label: t("aboutPage.stat1") },
+    { value: "24/7", label: t("aboutPage.stat2") },
+    { value: t("hero.statsModern"), label: t("aboutPage.stat3") },
+    { value: t("aboutPage.stat4"), label: t("aboutPage.stat4") }
 ]
 
-const values = [
+const getValues = (t: (key: string) => string) => [
     {
-        title: "Patient-Centric Care",
-        description: "Every decision we make is guided by what's best for our patients' well-being and recovery."
+        title: t("aboutPage.value1Title"),
+        description: t("aboutPage.value1Desc")
     },
     {
-        title: "Excellence in Medicine",
-        description: "We maintain the highest standards of medical practice with cutting-edge technology."
+        title: t("aboutPage.value2Title"),
+        description: t("aboutPage.value2Desc")
     },
     {
-        title: "Expert Team",
-        description: "Our team of specialists brings decades of combined experience across all medical fields."
+        title: t("aboutPage.value3Title"),
+        description: t("aboutPage.value3Desc")
     },
     {
-        title: "24/7 Availability",
-        description: "Round-the-clock emergency services and critical care support when you need it most."
+        title: t("aboutPage.value4Title"),
+        description: t("aboutPage.value4Desc")
     }
 ]
 
-const milestones = [
-    { year: "2025", title: "Foundation", description: "Shri Durga Hospital opened its doors in Muzaffarpur with a vision to provide quality multi-specialty healthcare." },
-    { year: "2025", title: "Expert Team", description: "Assembled a team of 5 highly qualified specialist doctors across key medical disciplines." },
-    { year: "2025", title: "Modern Facilities", description: "Equipped with modern medical equipment and facilities to serve the community." },
-    { year: "2025", title: "24/7 Services", description: "Launched round-the-clock emergency and critical care services for patients." },
+const getMilestones = (t: (key: string) => string) => [
+    { year: "2025", title: t("aboutPage.milestone1Title"), description: t("aboutPage.milestone1Desc") },
+    { year: "2025", title: t("aboutPage.milestone2Title"), description: t("aboutPage.milestone2Desc") },
+    { year: "2025", title: t("aboutPage.milestone3Title"), description: t("aboutPage.milestone3Desc") },
+    { year: "2025", title: t("aboutPage.milestone4Title"), description: t("aboutPage.milestone4Desc") },
 ]
 
 export default function AboutPage() {
+    const { t } = useLanguage()
+    const stats = getStats(t)
+    const values = getValues(t)
+    const milestones = getMilestones(t)
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
@@ -47,20 +54,20 @@ export default function AboutPage() {
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <span className="inline-block py-2 px-4 rounded-full bg-white text-primary text-sm font-semibold mb-4 shadow-sm">
-                                ABOUT US
+                                {t("aboutPage.badge")}
                             </span>
                             <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
-                                Quality Healthcare in Muzaffarpur
+                                {t("aboutPage.title")}
                             </h1>
                             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                                Shri Durga Hospital is a newly established multi-specialty clinic in Muzaffarpur, bringing together experienced and specialist doctors to provide quality healthcare services under one roof.
+                                {t("aboutPage.heroDescription")}
                             </p>
                             <div className="flex flex-wrap gap-4">
                                 <Link href="/appointment" className="btn-secondary">
-                                    Book Appointment
+                                    {t("nav.bookAppointment")}
                                 </Link>
                                 <Link href="/services" className="btn-outline">
-                                    Our Services
+                                    {t("aboutPage.ourServices")}
                                 </Link>
                             </div>
                         </div>
@@ -75,7 +82,7 @@ export default function AboutPage() {
                             </div>
                             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl border border-gray-200">
                                 <div className="text-4xl font-bold text-secondary mb-1">5</div>
-                                <div className="text-sm text-muted-foreground">Specialist Doctors</div>
+                                <div className="text-sm text-muted-foreground">{t("aboutPage.specialistDoctors")}</div>
                             </div>
                         </div>
                     </div>
@@ -101,13 +108,13 @@ export default function AboutPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
                         <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-4">
-                            OUR VALUES
+                            {t("aboutPage.valuesTitle")}
                         </span>
                         <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">
-                            What Drives Us
+                            {t("aboutPage.valuesTitle")}
                         </h2>
                         <p className="text-muted-foreground">
-                            Our core values guide everything we do, from patient care to medical innovation.
+                            {t("about.description")}
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -139,12 +146,12 @@ export default function AboutPage() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-3xl font-bold mb-4" style={{color: 'white'}}>Our Mission</h3>
+                            <h3 className="text-3xl font-bold mb-4" style={{color: 'white'}}>{t("about.mission")}</h3>
                             <p className="text-white/90 leading-relaxed mb-6">
-                                To provide compassionate, patient-centered healthcare that improves the quality of life for our patients and communities. We are committed to excellence in clinical care, education, and research.
+                                {t("about.missionFull")}
                             </p>
                             <ul className="space-y-3">
-                                {["Accessible healthcare for all", "Continuous medical innovation", "Patient safety first"].map((item, i) => (
+                                {[t("about.missionPoint1"), t("about.missionPoint2"), t("about.missionPoint3")].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3 text-white">
                                         <svg className="w-5 h-5 text-secondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -160,12 +167,12 @@ export default function AboutPage() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                                 </svg>
                             </div>
-                            <h3 className="text-3xl font-bold mb-4">Our Vision</h3>
+                            <h3 className="text-3xl font-bold mb-4">{t("about.vision")}</h3>
                             <p className="text-white/90 leading-relaxed mb-6">
-                                To be the most trusted healthcare institution in India, recognized for our commitment to healing, innovation, and building healthier communities for generations to come.
+                                {t("about.visionFull")}
                             </p>
                             <ul className="space-y-3">
-                                {["Leader in medical excellence", "Pioneering healthcare innovation", "Building healthier communities"].map((item, i) => (
+                                {[t("about.visionPoint1"), t("about.visionPoint2"), t("about.visionPoint3")].map((item, i) => (
                                     <li key={i} className="flex items-center gap-3 text-white">
                                         <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -184,10 +191,10 @@ export default function AboutPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto mb-12">
                         <span className="inline-block py-2 px-4 rounded-full bg-blue-100 text-primary text-sm font-semibold mb-4">
-                            OUR JOURNEY
+                            {t("aboutPage.journeyTitle")}
                         </span>
                         <h2 className="text-3xl lg:text-4xl font-bold text-primary">
-                            Our Journey Begins
+                            {t("aboutPage.journeyTitle")}
                         </h2>
                     </div>
                     <div className="space-y-8">

@@ -6,39 +6,40 @@ import { motion } from "framer-motion"
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react"
 import { useState } from "react"
 import Select from "react-select"
+import { useLanguage } from "@/contexts/LanguageContext"
 
-const subjectOptions = [
-    { value: "appointment", label: "📅 Book Appointment" },
-    { value: "inquiry", label: "❓ General Inquiry" },
-    { value: "feedback", label: "💬 Feedback" },
-    { value: "billing", label: "💳 Billing" },
-    { value: "other", label: "📝 Other" }
+const getSubjectOptions = (t: (key: string) => string) => [
+    { value: "appointment", label: t("contactPage.subjectAppointment") },
+    { value: "inquiry", label: t("contactPage.subjectInquiry") },
+    { value: "feedback", label: t("contactPage.subjectFeedback") },
+    { value: "billing", label: t("contactPage.subjectBilling") },
+    { value: "other", label: t("contactPage.subjectOther") }
 ]
 
-const contactInfo = [
+const getContactInfo = (t: (key: string) => string) => [
     {
         icon: Phone,
-        title: "Emergency",
+        title: t("contactPage.emergency"),
         value: "9771447716",
-        subtitle: "24/7 Available"
+        subtitle: t("contactPage.available")
     },
     {
         icon: Phone,
-        title: "Phone",
+        title: t("contactPage.phone"),
         value: "8789186308",
-        subtitle: "Mon-Sun 8am-8pm"
+        subtitle: t("contactPage.monSun")
     },
     {
         icon: Mail,
-        title: "Email",
+        title: t("contactPage.email"),
         value: "info@shridurgahospital.in",
-        subtitle: "We reply within 24 hours"
+        subtitle: t("contactPage.reply")
     },
     {
         icon: MapPin,
-        title: "Location",
-        value: "Thana Road, Kondhi, Ward-17",
-        subtitle: "Muzaffarpur, Bihar 843109"
+        title: t("contactPage.location"),
+        value: t("contactPage.address"),
+        subtitle: t("contactPage.city")
     }
 ]
 
@@ -63,6 +64,10 @@ const itemVariants = {
 }
 
 export default function ContactPage() {
+    const { t } = useLanguage()
+    const subjectOptions = getSubjectOptions(t)
+    const contactInfo = getContactInfo(t)
+    
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -96,13 +101,13 @@ export default function ContactPage() {
                         className="text-center"
                     >
                         <span className="inline-block py-2 px-4 rounded-full bg-white text-primary text-sm font-semibold mb-4 shadow-sm">
-                            GET IN TOUCH
+                            {t("contactPage.badge")}
                         </span>
                         <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
-                            Contact Us
+                            {t("contact.title")}
                         </h1>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
-                            Have questions or need to schedule an appointment? We're here to help you 24/7.
+                            {t("contactPage.description")}
                         </p>
                     </motion.div>
                 </div>
@@ -146,56 +151,56 @@ export default function ContactPage() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="medical-card rounded-3xl p-8 lg:p-12 shadow-lg"
                         >
-                            <h2 className="text-3xl font-bold mb-2" style={{color: 'white'}}>Send us a Message</h2>
-                            <p className="text-muted-foreground mb-8">Fill out the form and we'll get back to you shortly.</p>
+                            <h2 className="text-3xl font-bold mb-2 text-[#2C3E50]">{t("contactPage.formTitle")}</h2>
+                            <p className="text-muted-foreground mb-8">{t("contact.description")}</p>
 
                             {submitted ? (
                                 <div className="text-center py-12">
                                     <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
                                         <Send className="text-secondary" size={32} />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-[#2C3E50] mb-2">Message Sent!</h3>
-                                    <p className="text-muted-foreground">We'll get back to you within 24 hours.</p>
+                                    <h3 className="text-2xl font-bold text-[#2C3E50] mb-2">{t("contactPage.thankYou")}</h3>
+                                    <p className="text-muted-foreground">{t("contactPage.received")}</p>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
-                                            <label className="block text-sm font-semibold text-[#2C3E50] mb-2">Full Name *</label>
+                                            <label className="block text-sm font-semibold text-[#2C3E50] mb-2">{t("contact.name")} *</label>
                                             <input
                                                 type="text"
                                                 required
                                                 value={formData.name}
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                                 className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-[#2C3E50] focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all"
-                                                placeholder="John Doe"
+                                                placeholder={t("contactPage.namePlaceholder")}
                                             />
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-semibold text-[#2C3E50] mb-2">Email *</label>
+                                            <label className="block text-sm font-semibold text-[#2C3E50] mb-2">{t("contact.email")} *</label>
                                             <input
                                                 type="email"
                                                 required
                                                 value={formData.email}
                                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:border-warm focus:ring-2 focus:ring-warm/20 outline-none transition-all"
-                                                placeholder="john@example.com"
+                                                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-[#2C3E50] focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all"
+                                                placeholder={t("contactPage.emailPlaceholder")}
                                             />
                                         </div>
                                     </div>
                                     <div className="grid md:grid-cols-2 gap-6">
                                         <div>
-                                            <label className="block text-sm font-semibold text-[#2C3E50] mb-2">Phone</label>
+                                            <label className="block text-sm font-semibold text-[#2C3E50] mb-2">{t("contact.phone")}</label>
                                             <input
                                                 type="tel"
                                                 value={formData.phone}
                                                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:border-warm focus:ring-2 focus:ring-warm/20 outline-none transition-all"
-                                                placeholder="+91 98765 43210"
+                                                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-[#2C3E50] focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all"
+                                                placeholder={t("contactPage.phonePlaceholder")}
                                             />
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-semibold text-[#2C3E50] mb-2">Subject *</label>
+                                            <label className="block text-sm font-semibold text-[#2C3E50] mb-2">{t("contactPage.subject")} *</label>
                                             <Select
                                                 options={subjectOptions}
                                                 value={subjectOptions.find(opt => opt.value === formData.subject) || null}
@@ -226,14 +231,14 @@ export default function ContactPage() {
                                         </div>
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-semibold text-[#2C3E50] mb-2">Message *</label>
+                                        <label className="block text-sm font-semibold text-[#2C3E50] mb-2">{t("contact.message")} *</label>
                                         <textarea
                                             required
                                             rows={5}
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-[#2C3E50] focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all resize-none"
-                                            placeholder="How can we help you?"
+                                            placeholder={t("contactPage.messagePlaceholder")}
                                         />
                                     </div>
                                     <button
@@ -241,7 +246,7 @@ export default function ContactPage() {
                                         disabled={isSubmitting}
                                         className="btn-secondary px-8 py-4 rounded-full font-bold w-full disabled:opacity-50 flex items-center justify-center gap-2"
                                     >
-                                        {isSubmitting ? "Sending..." : "Send Message"}
+                                        {isSubmitting ? t("contactPage.submitting") : t("contactPage.submit")}
                                         <Send size={18} />
                                     </button>
                                 </form>
@@ -275,26 +280,26 @@ export default function ContactPage() {
                                         <Clock className="text-primary" size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-[#2C3E50] text-lg">Operating Hours</h3>
-                                        <p className="text-sm text-muted-foreground">We're here when you need us</p>
+                                        <h3 className="font-bold text-[#2C3E50] text-lg">{t("contactPage.operatingHours")}</h3>
+                                        <p className="text-sm text-muted-foreground">{t("contactPage.hereWhenNeeded")}</p>
                                     </div>
                                 </div>
                                 <div className="space-y-4">
                                     <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                                        <span className="text-muted-foreground">Emergency</span>
-                                        <span className="font-semibold text-secondary">24/7 Open</span>
+                                        <span className="text-muted-foreground">{t("contactPage.emergency")}</span>
+                                        <span className="font-semibold text-secondary">{t("contactPage.open24x7")}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                                        <span className="text-muted-foreground">OPD</span>
-                                        <span className="font-semibold text-[#2C3E50]">8:00 AM - 8:00 PM</span>
+                                        <span className="text-muted-foreground">{t("contactPage.opd")}</span>
+                                        <span className="font-semibold text-[#2C3E50]">{t("contactPage.opdTime")}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3 border-b border-gray-200">
-                                        <span className="text-muted-foreground">Laboratory</span>
-                                        <span className="font-semibold text-[#2C3E50]">7:00 AM - 9:00 PM</span>
+                                        <span className="text-muted-foreground">{t("contactPage.laboratory")}</span>
+                                        <span className="font-semibold text-[#2C3E50]">{t("contactPage.labTime")}</span>
                                     </div>
                                     <div className="flex justify-between items-center py-3">
-                                        <span className="text-muted-foreground">Pharmacy</span>
-                                        <span className="font-semibold text-[#2C3E50]">24/7 Open</span>
+                                        <span className="text-muted-foreground">{t("contactPage.pharmacy")}</span>
+                                        <span className="font-semibold text-[#2C3E50]">{t("contactPage.open24x7")}</span>
                                     </div>
                                 </div>
                             </div>

@@ -5,47 +5,48 @@ import { Footer } from "@/components/Footer"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { Scissors, Baby, Stethoscope, Activity, Bone, ArrowRight } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
-const services = [
+const getServices = (t: (key: string) => string) => [
     {
         icon: Scissors,
-        title: "General Surgery",
+        title: t("services.generalSurgery"),
         slug: "general-surgery",
-        description: "Expert surgical care for a wide range of conditions. Our general surgeon provides comprehensive surgical solutions with modern techniques.",
-        features: ["Abdominal Surgery", "Hernia Repair", "Gallbladder Surgery", "Thyroid Surgery"],
-        doctor: "Dr. Vishal Kumar - MBBS, MS (General Surgeon)"
+        description: t("service.generalSurgeryDesc"),
+        features: [t("service.generalSurgeryFeature1"), t("service.generalSurgeryFeature2"), t("service.generalSurgeryFeature3"), t("service.generalSurgeryFeature4")],
+        doctor: t("service.generalSurgeryDoctor")
     },
     {
         icon: Baby,
-        title: "Obstetrics & Gynecology",
+        title: t("services.gynecology"),
         slug: "obstetrics-gynecology",
-        description: "Complete women's healthcare from pregnancy care to gynecological treatments. Specialized care for mothers and women's health.",
-        features: ["Pregnancy Care", "Normal & C-Section Delivery", "Gynecological Surgery", "Family Planning"],
-        doctor: "Dr. (Mrs.) Shweta - MBBS, MS (Obstetrician & Gynecologist)"
+        description: t("service.gynecologyDesc"),
+        features: [t("service.gynecologyFeature1"), t("service.gynecologyFeature2"), t("service.gynecologyFeature3"), t("service.gynecologyFeature4")],
+        doctor: t("service.gynecologyDoctor")
     },
     {
         icon: Stethoscope,
-        title: "Pediatrics",
+        title: t("services.pediatrics"),
         slug: "pediatrics",
-        description: "Specialized healthcare for infants, children, and adolescents. Expert pediatric care for your child's health and development.",
-        features: ["Child Health Checkups", "Vaccination", "Growth Monitoring", "Pediatric Treatment"],
-        doctor: "Dr. Siddhartha - MBBS, MD (Pediatrician)"
+        description: t("service.pediatricsDesc"),
+        features: [t("service.pediatricsFeature1"), t("service.pediatricsFeature2"), t("service.pediatricsFeature3"), t("service.pediatricsFeature4")],
+        doctor: t("service.pediatricsDoctor")
     },
     {
         icon: Activity,
-        title: "Anesthesia & Critical Care",
+        title: t("services.anesthesia"),
         slug: "anesthesia-critical-care",
-        description: "Expert anesthesia services for surgical procedures and comprehensive critical care management for serious conditions.",
-        features: ["Surgical Anesthesia", "Pain Management", "ICU Care", "Emergency Care"],
-        doctor: "Dr. Vijay Singh - MBBS, MD (Anesthesia & Critical Care)"
+        description: t("service.anesthesiaDesc"),
+        features: [t("service.anesthesiaFeature1"), t("service.anesthesiaFeature2"), t("service.anesthesiaFeature3"), t("service.anesthesiaFeature4")],
+        doctor: t("service.anesthesiaDoctor")
     },
     {
         icon: Bone,
-        title: "Orthopedic Surgery",
+        title: t("services.orthopedics"),
         slug: "orthopedic-surgery",
-        description: "Expert care for bone, joint, and muscle conditions. Modern orthopedic treatments for better mobility and pain relief.",
-        features: ["Fracture Treatment", "Joint Pain", "Sports Injuries", "Bone Surgery"],
-        doctor: "Dr. Sumit Kumar - MBBS, MS (Orthopedic Surgeon)"
+        description: t("service.orthopedicsDesc"),
+        features: [t("service.orthopedicsFeature1"), t("service.orthopedicsFeature2"), t("service.orthopedicsFeature3"), t("service.orthopedicsFeature4")],
+        doctor: t("service.orthopedicsDoctor")
     },
 ]
 
@@ -70,6 +71,9 @@ const itemVariants = {
 }
 
 export default function ServicesPage() {
+    const { t } = useLanguage()
+    const services = getServices(t)
+    
     return (
         <main className="min-h-screen bg-white">
             <Navbar />
@@ -84,20 +88,20 @@ export default function ServicesPage() {
                         className="text-center max-w-4xl mx-auto"
                     >
                         <span className="inline-block py-2 px-4 rounded-full bg-white text-primary text-sm font-semibold mb-4 shadow-sm">
-                            OUR SERVICES
+                            {t("servicesPage.badge")}
                         </span>
                         <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
-                            World-Class Medical Services
+                            {t("servicesPage.title")}
                         </h1>
                         <p className="text-lg text-muted-foreground mb-8">
-                            Comprehensive healthcare solutions delivered by expert teams with cutting-edge technology and compassionate care.
+                            {t("servicesPage.description")}
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="/appointment" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer shadow-lg">
-                                Book Appointment <ArrowRight size={18} />
+                                {t("nav.bookAppointment")} <ArrowRight size={18} />
                             </Link>
                             <Link href="/contact" className="btn-outline cursor-pointer">
-                                Contact Us
+                                {t("servicesPage.contactUs")}
                             </Link>
                         </div>
                     </motion.div>
@@ -142,7 +146,7 @@ export default function ServicesPage() {
                                                     ))}
                                                 </div>
                                                 <div className="mt-6 flex items-center gap-2 text-secondary font-semibold text-sm">
-                                                    Learn More <ArrowRight size={16} />
+                                                    {t("services.learnMore")} <ArrowRight size={16} />
                                                 </div>
                                             </div>
                                         </div>
@@ -163,15 +167,15 @@ export default function ServicesPage() {
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.5 }}
                     >
-                        <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                            Need Immediate Medical Attention?
+                        <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#ffffff' }}>
+                            {t("cta.title")}
                         </h2>
                         <p className="text-white mb-10 max-w-2xl mx-auto">
-                            Our expert medical team is available 24/7 to help you with any health concerns.
+                            {t("cta.description")}
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Link href="tel:+919771447716" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer">
-                                Emergency: 9771447716
+                                {t("hero.emergencyCall")}: 9771447716
                             </Link>
                         </div>
                     </motion.div>

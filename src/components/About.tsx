@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export const About = () => {
+    const { t } = useLanguage()
+    
     return (
         <section className="py-24 bg-background overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -15,13 +18,13 @@ export const About = () => {
                         transition={{ duration: 0.5 }}
                     >
                         <span className="inline-block py-1 px-3 rounded-full border border-border bg-background text-muted-foreground text-xs font-bold tracking-wider uppercase font-sans mb-6">
-                            WHO WE ARE
+                            {t("about.title")}
                         </span>
                         <h2 className="text-3xl lg:text-5xl font-bold text-primary font-serif leading-tight">
-                            Leading the way in medical excellence with compassionate patient care.
+                            {t("about.subtitle")}
                         </h2>
                         <p className="mt-8 text-xl text-muted-foreground font-sans max-w-3xl mx-auto">
-                            Shri Durga Hospital is dedicated to providing world-class healthcare services. With state-of-the-art infrastructure and a team of expert doctors, we ensure the best possible outcomes for every patient.
+                            {t("about.description")}
                         </p>
                        <div className="mt-10">
   <button className="bg-[#1E3A8A] text-white px-8 py-4 rounded-full font-semibold font-sans">

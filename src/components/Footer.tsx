@@ -1,30 +1,34 @@
-import Link from "next/link"
+"use client"
 
-const footerLinks = {
-    Departments: [
-        { name: "Cardiology", href: "/services" },
-        { name: "Neurology", href: "/services" },
-        { name: "Orthopedics", href: "/services" },
-        { name: "Pediatrics", href: "/services" },
-        { name: "All Services", href: "/services" },
-    ],
-    Company: [
-        { name: "About Us", href: "/about" },
-        { name: "Our Doctors", href: "/doctors" },
-        { name: "Blog", href: "/blog" },
-        { name: "FAQs", href: "/faq" },
-        { name: "Contact", href: "/contact" },
-    ],
-    Contact: [
-        { name: "Emergency: 9771447716", href: "tel:+919771447716" },
-        { name: "Helpline: 8789186308", href: "tel:+918789186308" },
-        { name: "Book Appointment", href: "/appointment" },
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Terms of Service", href: "/terms" },
-    ],
-}
+import Link from "next/link"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export const Footer = () => {
+    const { t } = useLanguage()
+    
+    const footerLinks = {
+        [t("footer.quickLinks")]: [
+            { name: t("nav.about"), href: "/about" },
+            { name: t("nav.doctors"), href: "/doctors" },
+            { name: t("nav.blog"), href: "/blog" },
+            { name: "FAQs", href: "/faq" },
+            { name: t("nav.contact"), href: "/contact" },
+        ],
+        [t("footer.ourServices")]: [
+            { name: t("services.generalSurgery"), href: "/services/general-surgery" },
+            { name: t("services.gynecology"), href: "/services/obstetrics-gynecology" },
+            { name: t("services.orthopedics"), href: "/services/orthopedic-surgery" },
+            { name: t("services.pediatrics"), href: "/services/pediatrics" },
+            { name: t("nav.services"), href: "/services" },
+        ],
+        [t("footer.contactUs")]: [
+            { name: `${t("hero.emergencyCall")}: 9771447716`, href: "tel:+919771447716" },
+            { name: "Helpline: 8789186308", href: "tel:+918789186308" },
+            { name: t("nav.bookAppointment"), href: "/appointment" },
+            { name: t("footer.privacy"), href: "/privacy" },
+            { name: t("footer.terms"), href: "/terms" },
+        ],
+    }
     return (
         <footer className="bg-primary text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -33,10 +37,10 @@ export const Footer = () => {
                     <div>
                         <h3 className="text-xl font-bold mb-4" style={{color: 'white'}}>Shri Durga Hospital</h3>
                         <p className="text-white text-sm mb-4 leading-relaxed">
-                            Experienced and specialist doctors' services now available under one roof in Muzaffarpur.
+                            {t("footer.aboutText")}
                         </p>
                         <Link href="/appointment" className="btn-secondary inline-block">
-                            Book Appointment
+                            {t("nav.bookAppointment")}
                         </Link>
                     </div>
 
@@ -63,7 +67,7 @@ export const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-white text-sm text-center md:text-left">
-                        © {new Date().getFullYear()} Shri Durga Hospital. All rights reserved.
+                        © {new Date().getFullYear()} Shri Durga Hospital. {t("footer.rights")}
                     </p>
                     <p className="text-white text-xs text-center md:text-right">
                         Thana Road, Kondhi, Ward No-17, Muzaffarpur-843109, Bihar
