@@ -10,7 +10,7 @@ export const Footer = () => {
         [t("footer.quickLinks")]: [
             { name: t("nav.about"), href: "/about" },
             { name: t("nav.doctors"), href: "/doctors" },
-            { name: t("nav.blog"), href: "/blog" },
+            // { name: t("nav.blog"), href: "/blog" },
             { name: "FAQs", href: "/faq" },
             { name: t("nav.contact"), href: "/contact" },
         ],
