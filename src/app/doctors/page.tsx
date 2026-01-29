@@ -7,6 +7,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Star, Phone, Calendar } from "lucide-react"
 import { useLanguage } from "@/contexts/LanguageContext"
+import React from "react"
 
 const getDoctors = (t: (key: string) => string) => [
     {
@@ -94,6 +95,11 @@ export default function DoctorsPage() {
     const { t } = useLanguage()
     const doctors = getDoctors(t)
     const specialties = getSpecialties(t)
+    const [selectedSpecialty, setSelectedSpecialty] = React.useState(0)
+    
+    const filteredDoctors = selectedSpecialty === 0 
+        ? doctors 
+        : doctors.filter(doctor => doctor.specialty === specialties[selectedSpecialty])
     
     return (
         <main className="min-h-screen bg-white">
@@ -128,7 +134,8 @@ export default function DoctorsPage() {
                         {specialties.map((specialty, index) => (
                             <button
                                 key={index}
-                                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${index === 0
+                                onClick={() => setSelectedSpecialty(index)}
+                                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${index === selectedSpecialty
                                     ? 'bg-primary text-white'
                                     : 'bg-blue-50 text-primary hover:bg-blue-100'
                                     }`}
@@ -147,7 +154,7 @@ export default function DoctorsPage() {
                         className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
                         variants={containerVariants}
                         initial="hidden"
-                        animate="visible"
+                        afilteredDimate="visible"
                     >
                         {doctors.map((doctor, index) => (
                             <motion.div
