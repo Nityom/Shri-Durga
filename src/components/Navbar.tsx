@@ -26,11 +26,11 @@ export const Navbar = () => {
                     <div className="flex-shrink-0">
                         <Link href="/" className="flex items-center">
                             <Image
-                                src="/ShriDurgaLogoo.png"
+                                src="/image.png"
                                 alt="Shri Durga Hospital"
-                                width={800}
-                                height={480}
-                                className="h-32 w-auto brightness-0 invert"
+                                width={200}
+                                height={200}
+                                className="h-14 w-auto brightness-0 invert"
                             />
                         </Link>
                     </div>
