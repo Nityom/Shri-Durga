@@ -24,14 +24,15 @@ export const Navbar = () => {
                 <div className="flex items-center justify-between h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <Link href="/" className="flex items-center">
+                        <Link href="/" className="flex items-center gap-3">
                             <Image
                                 src="/image.png"
                                 alt="Shri Durga Hospital"
                                 width={200}
                                 height={200}
-                                className="h-14 w-auto brightness-0 invert"
+                                className="h-12 w-auto brightness-0 invert"
                             />
+                            <span className="text-xl font-bold">Shri Durga Hospital</span>
                         </Link>
                     </div>
 
