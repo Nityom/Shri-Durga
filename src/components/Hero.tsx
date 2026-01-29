@@ -1,0 +1,106 @@
+import Image from "next/image"
+import Link from "next/link"
+
+export const Hero = () => {
+    return (
+        <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 to-cyan-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="max-w-2xl">
+                        <div className="inline-flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-sm mb-6">
+                            <div className="flex -space-x-2">
+                                <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
+                                    <Image
+                                        src="/images/doctor-1.png"
+                                        alt="Doctor"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
+                                    <Image
+                                        src="/images/doctor-2.png"
+                                        alt="Doctor"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                                <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
+                                    <Image
+                                        src="/images/doctor-3.png"
+                                        alt="Doctor"
+                                        fill
+                                        className="object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div className="text-sm">
+                                <span className="font-bold text-primary">5</span>
+                                <span className="text-muted-foreground ml-1">Expert Doctors</span>
+                            </div>
+                        </div>
+
+                        <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
+                            Quality Healthcare in <span className="text-secondary">Muzaffarpur</span>
+                        </h1>
+
+                        <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                            Multi-specialty clinic with experienced doctors. 24/7 Emergency Care, Modern Facilities, and Expert Medical Services under one roof.
+                        </p>
+
+                        <div className="flex flex-wrap gap-4 mb-12">
+                            <Link href="/appointment" className="btn-secondary">
+                                Book Appointment
+                            </Link>
+                            <Link href="tel:+919771447716" className="btn-outline">
+                                Emergency: 9771447716
+                            </Link>
+                        </div>
+
+                        <div className="flex items-center gap-8 pt-8 border-t border-gray-200">
+                            <div>
+                                <div className="text-2xl font-bold text-primary">5</div>
+                                <div className="text-sm text-muted-foreground">Doctors</div>
+                            </div>
+                            <div>
+                                <div className="text-2xl font-bold text-primary">Modern</div>
+                                <div className="text-sm text-muted-foreground">Facilities</div>
+                            </div>
+                            <div>
+                                <div className="text-2xl font-bold text-secondary">24/7</div>
+                                <div className="text-sm text-muted-foreground">Emergency</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="relative h-[500px] lg:h-[600px]">
+                        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-primary">
+                            <Image
+                                src="/images/doctor-hero.jpg"
+                                alt="Medical Professional"
+                                fill
+                                className="object-cover object-top"
+                                priority
+                            />
+                        </div>
+
+                        {/* Floating Card */}
+                        <div className="absolute bottom-8 left-8 right-8 bg-white rounded-xl shadow-xl p-4 medical-card">
+                            <div className="flex items-center gap-3">
+                                <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white">
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div className="font-bold text-primary">Expert Care</div>
+                                    <div className="text-sm text-muted-foreground">24/7 Support Available</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
