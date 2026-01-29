@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 const navigationLinks = [
     { name: "Home", href: "/" },
@@ -15,8 +16,14 @@ const navigationLinks = [
 
 export const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const pathname = usePathname()
 
-    const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen)
+    const toggleMobileMenu = useCallback(() => setIsMobileMenuOpen(prev => !prev), [])
+
+    // Close mobile menu when route changes
+    useEffect(() => {
+        setIsMobileMenuOpen(false)
+    }, [pathname])
 
     return (
         <nav className="bg-primary text-white shadow-lg fixed top-0 left-0 right-0 z-50">
@@ -91,7 +98,6 @@ export const Navbar = () => {
                                 key={link.name}
                                 href={link.href}
                                 className="block text-white hover:bg-primary px-3 py-2 rounded-md"
-                                onClick={toggleMobileMenu}
                             >
                                 {link.name}
                             </Link>
@@ -100,7 +106,6 @@ export const Navbar = () => {
                             <Link
                                 href="/appointment"
                                 className="btn-secondary block text-center w-full"
-                                onClick={toggleMobileMenu}
                             >
                                 Book Appointment
                             </Link>
