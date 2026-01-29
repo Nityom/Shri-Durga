@@ -33,10 +33,10 @@ const getValues = (t: (key: string) => string) => [
 ]
 
 const getMilestones = (t: (key: string) => string) => [
-    { year: "2025", title: t("aboutPage.milestone1Title"), description: t("aboutPage.milestone1Desc") },
-    { year: "2025", title: t("aboutPage.milestone2Title"), description: t("aboutPage.milestone2Desc") },
-    { year: "2025", title: t("aboutPage.milestone3Title"), description: t("aboutPage.milestone3Desc") },
-    { year: "2025", title: t("aboutPage.milestone4Title"), description: t("aboutPage.milestone4Desc") },
+    { year: "2026", title: t("aboutPage.milestone1Title"), description: t("aboutPage.milestone1Desc") },
+    { year: "2026", title: t("aboutPage.milestone2Title"), description: t("aboutPage.milestone2Desc") },
+    { year: "2026", title: t("aboutPage.milestone3Title"), description: t("aboutPage.milestone3Desc") },
+    { year: "2026", title: t("aboutPage.milestone4Title"), description: t("aboutPage.milestone4Desc") },
 ]
 
 export default function AboutPage() {
@@ -74,7 +74,7 @@ export default function AboutPage() {
                         <div className="relative">
                             <div className="aspect-square rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                                 <Image
-                                    src="/images/about-hero.jpg"
+                                    src="/images/about-hero.png"
                                     alt="Shri Durga Hospital Building"
                                     fill
                                     className="object-cover"
