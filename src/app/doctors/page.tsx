@@ -7,7 +7,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Star, Phone, Calendar } from "lucide-react"
 import { useLanguage } from "@/contexts/LanguageContext"
-import React from "react"
+import { useState } from "react"
 
 const getDoctors = (t: (key: string) => string) => [
     {
@@ -95,11 +95,16 @@ export default function DoctorsPage() {
     const { t } = useLanguage()
     const doctors = getDoctors(t)
     const specialties = getSpecialties(t)
-    const [selectedSpecialty, setSelectedSpecialty] = React.useState(0)
+    const [selectedSpecialty, setSelectedSpecialty] = useState(0)
     
     const filteredDoctors = selectedSpecialty === 0 
         ? doctors 
         : doctors.filter(doctor => doctor.specialty === specialties[selectedSpecialty])
+    
+    console.log('Doctors:', doctors)
+    console.log('Filtered Doctors:', filteredDoctors)
+    console.log('Specialties:', specialties)
+    console.log('Selected Specialty:', selectedSpecialty)
     
     return (
         <main className="min-h-screen bg-white">
@@ -150,17 +155,9 @@ export default function DoctorsPage() {
             {/* Doctors Grid */}
             <section className="py-16">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <motion.div
-                        className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-                        variants={containerVariants}
-                        initial="hidden"
-                        afilteredDimate="visible"
-                    >
-                        {doctors.map((doctor, index) => (
-                            <motion.div
-                                key={index}
-                                variants={itemVariants}
-                            >
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {filteredDoctors.map((doctor) => (
+                            <div key={doctor.id}>
                                 <Link href={`/doctors/${doctor.id}`}>
                                     <div className="medical-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
                                         <div className="aspect-4/5 relative bg-gray-100 overflow-hidden">
@@ -196,9 +193,9 @@ export default function DoctorsPage() {
                                         </div>
                                     </div>
                                 </Link>
-                            </motion.div>
+                            </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
