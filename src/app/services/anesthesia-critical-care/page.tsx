@@ -187,7 +187,7 @@ export default function AnesthesiaCriticalCarePage() {
                         {t("anesthesia.ctaDescription")}
                     </p>
                     <div className="flex flex-wrap gap-4 justify-center">
-                        <Link href="/appointment" className="btn-secondary">
+                        <Link href="/appointment" className="btn-secondary flex items-center">
                             <Calendar size={18} className="mr-2" />
                             {t("anesthesia.bookConsultation")}
                         </Link>
