@@ -112,7 +112,7 @@ export default function ServicesPage() {
             <section className="py-24">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <motion.div
-                        className="grid md:grid-cols-2 gap-8"
+                        className="flex flex-wrap justify-center gap-8"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
@@ -121,6 +121,7 @@ export default function ServicesPage() {
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
+                                className="w-full md:w-[calc(50%-1rem)]"
                             >
                                 <Link href={`/services/${service.slug}`} className="cursor-pointer block">
                                     <div className="medical-card rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group h-full">

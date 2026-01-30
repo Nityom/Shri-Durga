@@ -19,6 +19,14 @@ const features = [
         titleKey: "features.affordableTitle",
         descKey: "features.affordableDesc",
     },
+    {
+        titleKey: "features.experiencedTitle",
+        descKey: "features.experiencedDesc",
+    },
+    {
+        titleKey: "features.patientCareTitle",
+        descKey: "features.patientCareDesc",
+    },
 ]
 
 export const Features = () => {

@@ -32,6 +32,10 @@
   "features.facilityDesc": "अत्याधुनिक उपकरण और आरामदायक वातावरण",
   "features.affordableTitle": "किफायती देखभाल",
   "features.affordableDesc": "प्रतिस्पर्धी कीमतों पर गुणवत्तापूर्ण स्वास्थ्य सेवा",
+  "features.experiencedTitle": "अनुभवी टीम",
+  "features.experiencedDesc": "वर्षों के अनुभव वाले उच्च योग्य डॉक्टर",
+  "features.patientCareTitle": "रोगी-केंद्रित देखभाल",
+  "features.patientCareDesc": "आपकी भलाई पर केंद्रित व्यक्तिगत उपचार योजनाएं",
   
   "doctors.title": "हमारे विशेषज्ञ डॉक्टर",
   "doctors.subtitle": "हमारे विशेषज्ञों से मिलें",
@@ -263,11 +267,11 @@
   "appointmentPage.backHome": "होम पर वापस",
   "appointmentPage.viewServices": "हमारी सेवाएं देखें",
   
-  "services.cardiology": "हृदय रोग विज्ञान",
+  "services.cardiology": "हृदय रोग रोग",
   "services.neurology": "न्यूरोलॉजी",
   "services.generalMedicine": "सामान्य चिकित्सा",
-  "services.dermatology": "त्वचा विज्ञान",
-  "services.ophthalmology": "नेत्र विज्ञान",
+  "services.dermatology": "त्वचा रोग",
+  "services.ophthalmology": "नेत्र रोग",
   "services.ent": "ईएनटी",
   "services.oncology": "ऑन्कोलॉजी",
   
