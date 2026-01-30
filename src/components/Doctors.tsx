@@ -23,7 +23,12 @@ const getDoctors = (t: (key: string) => string) => [
     {
         name: t("doctors.doctor4Name"),
         role: t("doctors.doctor4Role"),
-        image: "/images/doctor-3.png",
+        image: "/images/doctor-4.png",
+    },
+    {
+        name: t("doctors.doctor5Name"),
+        role: t("doctors.doctor5Role"),
+        image: "/images/doctor-5.png",
     },
 ]
 
@@ -49,20 +54,20 @@ export const Doctors = () => {
                     </Link>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
                     {doctors.map((doctor, index) => (
                         <div key={index} className="medical-card text-center">
-                            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 bg-gray-200">
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-3 bg-gray-200">
                                 <Image
                                     src={doctor.image}
                                     alt={doctor.name}
-                                    width={128}
-                                    height={128}
+                                    width={96}
+                                    height={96}
                                     className="object-cover w-full h-full"
                                 />
                             </div>
-                            <h3 className="text-lg font-bold text-primary mb-1">{doctor.name}</h3>
-                            <p className="text-sm text-secondary font-semibold">{doctor.role}</p>
+                            <h3 className="text-base font-bold text-primary mb-1">{doctor.name}</h3>
+                            <p className="text-xs text-secondary font-semibold">{doctor.role}</p>
                         </div>
                     ))}
                 </div>

@@ -155,10 +155,10 @@ export default function DoctorsPage() {
             {/* Doctors Grid */}
             <section className="py-16">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="flex flex-wrap justify-center gap-8">
                         {filteredDoctors.map((doctor) => (
-                            <div key={doctor.id}>
-                                <Link href={`/doctors/${doctor.id}`}>
+                            <div key={doctor.id} className="w-full md:w-[calc(45%-1rem)] lg:w-[calc(28%-1.5rem)]">
+                                {/* <Link href={`/doctors/${doctor.id}`}> */}
                                     <div className="medical-card rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
                                         <div className="aspect-4/5 relative bg-gray-100 overflow-hidden">
                                             <Image
@@ -176,7 +176,7 @@ export default function DoctorsPage() {
                                             <div className="text-xs font-semibold text-secondary uppercase tracking-wider mb-2">
                                                 {doctor.specialty}
                                             </div>
-                                            <h3 className="text-xl font-bold text-[#2C3E50] mb-1">
+                                            <h3 className="text-lg font-bold text-[#2C3E50] mb-1 whitespace-nowrap text-center">
                                                 {doctor.name}
                                             </h3>
                                             <p className="text-sm text-muted-foreground mb-4">
@@ -192,7 +192,7 @@ export default function DoctorsPage() {
                                             </div>
                                         </div>
                                     </div>
-                                </Link>
+                                {/* </Link> */}
                             </div>
                         ))}
                     </div>

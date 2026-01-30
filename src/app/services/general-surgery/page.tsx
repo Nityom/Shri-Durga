@@ -33,7 +33,7 @@ export default function GeneralSurgeryPage() {
                                 <Link href="/appointment" className="btn-secondary">
                                     {t("generalSurgery.bookAppointment")}
                                 </Link>
-                                <Link href="tel:+919771447716" className="btn-outline">
+                                <Link href="tel:+919771447716" className="btn-outline flex items-center">
                                     <Phone size={18} className="mr-2" />
                                     {t("generalSurgery.callNow")}
                                 </Link>
@@ -70,9 +70,9 @@ export default function GeneralSurgeryPage() {
                             <p className="text-muted-foreground mb-4">
                                 {t("generalSurgery.doctorDescription")}
                             </p>
-                            <Link href="/doctors/dr-vishal-kumar" className="text-secondary font-semibold text-sm hover:underline">
+                            {/* <Link href="/doctors/dr-vishal-kumar" className="text-secondary font-semibold text-sm hover:underline">
                                 {t("generalSurgery.viewProfile")}
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>

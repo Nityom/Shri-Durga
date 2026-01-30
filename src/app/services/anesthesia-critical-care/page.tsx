@@ -33,7 +33,7 @@ export default function AnesthesiaCriticalCarePage() {
                                 <Link href="/appointment" className="btn-secondary">
                                     {t("anesthesia.bookAppointment")}
                                 </Link>
-                                <Link href="tel:+919771447716" className="btn-outline">
+                                <Link href="tel:+919771447716" className="btn-outline flex items-center">
                                     <Phone size={18} className="mr-2" />
                                     {t("anesthesia.emergency")}
                                 </Link>
@@ -70,9 +70,9 @@ export default function AnesthesiaCriticalCarePage() {
                             <p className="text-muted-foreground mb-4">
                                 {t("anesthesia.doctorDescription")}
                             </p>
-                            <Link href="/doctors/dr-vijay-singh" className="text-secondary font-semibold text-sm hover:underline">
+                            {/* <Link href="/doctors/dr-vijay-singh" className="text-secondary font-semibold text-sm hover:underline">
                                 {t("anesthesia.viewProfile")}
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>

@@ -182,47 +182,53 @@ export default function FAQPage() {
                         initial="hidden"
                         animate="visible"
                     >
-                        {filteredCategories.map((category, catIndex) => (
-                            <motion.div
-                                key={catIndex}
-                                variants={itemVariants}
-                                className="mb-12"
-                            >
-                                <h2 className="text-2xl font-bold text-primary font-serif mb-6">{category.name}</h2>
-                                <div className="space-y-4">
-                                    {category.questions.map((item, qIndex) => {
-                                        const itemId = `${catIndex}-${qIndex}`
-                                        const isOpen = openItems[itemId]
-                                        return (
-                                            <div
-                                                key={qIndex}
-                                                className="medical-card rounded-2xl overflow-hidden"
-                                            >
-                                                <button
-                                                    onClick={() => toggleItem(itemId)}
-                                                    className="w-full px-6 py-5 flex items-center justify-between text-left"
+                        {filteredCategories.length > 0 ? (
+                            filteredCategories.map((category, catIndex) => (
+                                <motion.div
+                                    key={catIndex}
+                                    variants={itemVariants}
+                                    className="mb-12"
+                                >
+                                    <h2 className="text-2xl font-bold text-primary font-serif mb-6">{category.name}</h2>
+                                    <div className="space-y-4">
+                                        {category.questions.map((item, qIndex) => {
+                                            const itemId = `${catIndex}-${qIndex}`
+                                            const isOpen = openItems[itemId]
+                                            return (
+                                                <div
+                                                    key={qIndex}
+                                                    className="medical-card rounded-2xl overflow-hidden"
                                                 >
-                                                    <span className="font-semibold text-[#2C3E50] pr-4">{item.q}</span>
-                                                    <ChevronDown
-                                                        className={`text-slate-500 shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-                                                        size={20}
-                                                    />
-                                                </button>
-                                                <motion.div
-                                                    initial={false}
-                                                    animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-                                                    className="overflow-hidden"
-                                                >
-                                                    <p className="px-6 pb-5 text-muted-foreground font-sans leading-relaxed">
-                                                        {item.a}
-                                                    </p>
-                                                </motion.div>
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            </motion.div>
-                        ))}
+                                                    <button
+                                                        onClick={() => toggleItem(itemId)}
+                                                        className="w-full px-6 py-5 flex items-center justify-between text-left"
+                                                    >
+                                                        <span className="font-semibold text-[#2C3E50] pr-4">{item.q}</span>
+                                                        <ChevronDown
+                                                            className={`text-slate-500 shrink-0 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                                                            size={20}
+                                                        />
+                                                    </button>
+                                                    <motion.div
+                                                        initial={false}
+                                                        animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                                                        className="overflow-hidden"
+                                                    >
+                                                        <p className="px-6 pb-5 text-muted-foreground font-sans leading-relaxed">
+                                                            {item.a}
+                                                        </p>
+                                                    </motion.div>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                </motion.div>
+                            ))
+                        ) : (
+                            <div className="text-center py-16">
+                                <p className="text-lg text-muted-foreground">No results found for "{searchQuery}". Try different keywords.</p>
+                            </div>
+                        )}
                     </motion.div>
                 </div>
             </section>

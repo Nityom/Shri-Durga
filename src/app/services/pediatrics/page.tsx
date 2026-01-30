@@ -33,7 +33,7 @@ export default function PediatricsPage() {
                                 <Link href="/appointment" className="btn-secondary">
                                     {t("pediatrics.bookAppointment")}
                                 </Link>
-                                <Link href="tel:+919771447716" className="btn-outline">
+                                <Link href="tel:+919771447716" className="btn-outline flex items-center">
                                     <Phone size={18} className="mr-2" />
                                     {t("pediatrics.callNow")}
                                 </Link>
@@ -70,9 +70,9 @@ export default function PediatricsPage() {
                             <p className="text-muted-foreground mb-4">
                                 {t("pediatrics.doctorDescription")}
                             </p>
-                            <Link href="/doctors/dr-siddhartha" className="text-secondary font-semibold text-sm hover:underline">
+                            {/* <Link href="/doctors/dr-siddhartha" className="text-secondary font-semibold text-sm hover:underline">
                                 {t("pediatrics.viewProfile")}
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>

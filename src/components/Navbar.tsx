@@ -60,12 +60,12 @@ export const Navbar = () => {
                         <Link href="/" className="flex items-center gap-3">
                             <Image
                                 src="/image.png"
-                                alt="Shri Durga Hospital"
+                                alt={t("nav.hospitalName")}
                                 width={200}
                                 height={200}
                                 className="h-12 w-auto brightness-0 invert"
                             />
-                            <span className="text-xl font-bold">Shri Durga Hospital</span>
+                            <span className="text-xl font-bold">{t("nav.hospitalName")}</span>
                         </Link>
                     </div>
 
