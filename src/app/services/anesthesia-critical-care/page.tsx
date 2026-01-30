@@ -41,7 +41,7 @@ export default function AnesthesiaCriticalCarePage() {
                         </div>
                         <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/images/critical-care.jpg"
+                                src="/images/critical-care.png"
                                 alt={t("anesthesia.badge")}
                                 fill
                                 className="object-cover"

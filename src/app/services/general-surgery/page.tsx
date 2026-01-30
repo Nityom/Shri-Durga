@@ -41,7 +41,7 @@ export default function GeneralSurgeryPage() {
                         </div>
                         <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/images/general-surgery.jpg"
+                                src="/images/general-surgery.png"
                                 alt={t("generalSurgery.badge")}
                                 fill
                                 className="object-cover"

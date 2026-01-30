@@ -41,7 +41,7 @@ export default function ObstetricsGynecologyPage() {
                         </div>
                         <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/images/gynecology.jpg"
+                                src="/images/obstetrics.png"
                                 alt={t("gynecology.badge")}
                                 fill
                                 className="object-cover"

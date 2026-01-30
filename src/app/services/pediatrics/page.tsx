@@ -41,7 +41,7 @@ export default function PediatricsPage() {
                         </div>
                         <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/images/pediatrics.jpg"
+                                src="/images/pediatrics.png"
                                 alt={t("pediatrics.badge")}
                                 fill
                                 className="object-cover"

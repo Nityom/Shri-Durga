@@ -297,10 +297,10 @@ export default function ContactPage() {
                                         <span className="text-muted-foreground">{t("contactPage.laboratory")}</span>
                                         <span className="font-semibold text-[#2C3E50]">{t("contactPage.labTime")}</span>
                                     </div>
-                                    <div className="flex justify-between items-center py-3">
+                                    {/* <div className="flex justify-between items-center py-3">
                                         <span className="text-muted-foreground">{t("contactPage.pharmacy")}</span>
                                         <span className="font-semibold text-[#2C3E50]">{t("contactPage.open24x7")}</span>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </motion.div>

@@ -41,7 +41,7 @@ export default function OrthopedicSurgeryPage() {
                         </div>
                         <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/images/orthopedic.jpg"
+                                src="/images/orthopedic.png"
                                 alt={t("orthopedics.badge")}
                                 fill
                                 className="object-cover"
