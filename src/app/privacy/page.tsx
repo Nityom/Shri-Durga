@@ -21,7 +21,7 @@ export default function PrivacyPage() {
                             Privacy Policy
                         </h1>
                         <p className="text-muted-foreground font-sans">
-                            Last updated: December 6, 2024
+                            Last updated: Febuary 4 2026
                         </p>
                     </motion.div>
                 </div>
@@ -131,9 +131,11 @@ export default function PrivacyPage() {
                                 </p>
                                 <div className="bg-muted rounded-xl p-6 mt-4">
                                     <p className="font-semibold text-primary">Shri Durga Hospital - Privacy Office</p>
-                                    <p className="text-muted-foreground">Thana Road, Kondhi, Ward-17, Muzaffarpur, Bihar 843109</p>
+                                    <p className="text-muted-foreground">Thana Road, Kanti, Ward-17, Muzaffarpur, Bihar 843109</p>
                                     <p className="text-muted-foreground">Email: privacy@kailashhospital.com</p>
-                                    <p className="text-muted-foreground">Phone: +91 120 2444 444</p>
+                                    <p className="text-muted-foreground">Helpline & Emergency: +91 87891 86308</p>
+                                    <p className="text-muted-foreground">WhatsApp Appointment: 6223451244</p>
+                                    <p className="text-muted-foreground">After filling all the details, they should be sent to the WhatsApp number provided.</p>
                                 </div>
                             </div>
                         </motion.div>

@@ -23,7 +23,7 @@ export const Footer = () => {
         ],
         [t("footer.contactUs")]: [
             { name: `${t("hero.emergencyCall")}: 9771447716`, href: "tel:+919771447716" },
-            { name: "Helpline: 8789186308", href: "tel:+918789186308" },
+            { name: "Helpline: 6223451244", href: "tel:+916223451244" },
             { name: t("nav.bookAppointment"), href: "/appointment" },
             { name: t("footer.privacy"), href: "/privacy" },
             { name: t("footer.terms"), href: "/terms" },
@@ -70,7 +70,7 @@ export const Footer = () => {
                         © {new Date().getFullYear()} Shri Durga Hospital. {t("footer.rights")}
                     </p>
                     <p className="text-white text-xs text-center md:text-right">
-                        Thana Road, Kondhi, Ward No-17, Muzaffarpur-843109, Bihar
+                        Thana Road, Kanti, Ward No-17, Muzaffarpur-843109, Bihar
                     </p>
                 </div>
             </div>

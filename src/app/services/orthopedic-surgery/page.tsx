@@ -233,9 +233,9 @@ export default function OrthopedicSurgeryPage() {
                             <Calendar size={18} className="mr-2" />
                             {t("orthopedics.bookAppointment")}
                         </Link>
-                        <Link href="tel:+918789186308" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors">
+                        <Link href="tel:+916223451244" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors">
                             <Phone size={18} />
-                            8789186308
+                            6223451244
                         </Link>
                     </div>
                 </div>

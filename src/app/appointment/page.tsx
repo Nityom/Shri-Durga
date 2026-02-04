@@ -26,6 +26,12 @@ const timeSlots = [
     "05:00 PM", "05:30 PM", "06:00 PM", "06:30 PM"
 ]
 
+const sendWhatsAppMessage = async (message: string) => {
+    const whatsappNumber = "+919771447716"
+    const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`
+    window.open(url, "_blank")
+}
+
 export default function AppointmentPage() {
     const { t } = useLanguage()
     const departments = getDepartments(t)
@@ -48,7 +54,10 @@ export default function AppointmentPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsSubmitting(true)
-        await new Promise(resolve => setTimeout(resolve, 2000))
+
+        const message = `Appointment Details:\n\nDepartment: ${formData.department}\nDate: ${formData.date}\nTime: ${formData.time}\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAge: ${formData.age}\nGender: ${formData.gender}\nReason: ${formData.reason}`
+
+        await sendWhatsAppMessage(message)
         setSubmitted(true)
         setIsSubmitting(false)
     }

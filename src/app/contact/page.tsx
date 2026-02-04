@@ -26,7 +26,7 @@ const getContactInfo = (t: (key: string) => string) => [
     {
         icon: Phone,
         title: t("contactPage.phone"),
-        value: "8789186308",
+        value: "6223451244",
         subtitle: t("contactPage.monSun")
     },
     {
@@ -63,6 +63,12 @@ const itemVariants = {
     }
 }
 
+const sendWhatsAppMessage = async (message: string) => {
+    const whatsappNumber = "+919771447716";
+    const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+};
+
 export default function ContactPage() {
     const { t } = useLanguage()
     const subjectOptions = getSubjectOptions(t)
@@ -81,8 +87,10 @@ export default function ContactPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsSubmitting(true)
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1500))
+
+        const message = `Contact Form Submission:\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject}\nMessage: ${formData.message}`
+
+        await sendWhatsAppMessage(message)
         setSubmitted(true)
         setIsSubmitting(false)
     }

@@ -140,7 +140,7 @@ export default function TermsPage() {
                                 </p>
                                 <div className="bg-muted rounded-xl p-6 mt-4">
                                     <p className="font-semibold text-primary">Shri Durga Hospital - Legal Department</p>
-                                    <p className="text-muted-foreground">Thana Road, Kondhi, Ward-17, Muzaffarpur, Bihar 843109</p>
+                                    <p className="text-muted-foreground">Thana Road, Kanti, Ward-17, Muzaffarpur, Bihar 843109</p>
                                     <p className="text-muted-foreground">Email: info@shridurgahospital.com</p>
                                     <p className="text-muted-foreground">Phone: +91 120 2444 444</p>
                                 </div>

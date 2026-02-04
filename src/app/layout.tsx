@@ -90,7 +90,7 @@ export default function RootLayout({
     "telephone": "+91-9771447716",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Thana Road, Kondhi, Ward No-17",
+      "streetAddress": "Thana Road, Kanti, Ward No-17",
       "addressLocality": "Muzaffarpur",
       "addressRegion": "Bihar",
       "postalCode": "843109",
