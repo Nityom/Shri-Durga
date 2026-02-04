@@ -191,9 +191,9 @@ export default function ObstetricsGynecologyPage() {
                             <Calendar size={18} className="mr-2" />
                             {t("gynecology.bookAppointment")}
                         </Link>
-                        <Link href="tel:+916223451244" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors">
+                        <Link href="tel:+919771447716" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors">
                             <Phone size={18} />
-                            6223451244
+                            9771447716
                         </Link>
                     </div>
                 </div>

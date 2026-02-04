@@ -23,7 +23,7 @@ export const Footer = () => {
         ],
         [t("footer.contactUs")]: [
             { name: `${t("hero.emergencyCall")}: 9771447716`, href: "tel:+919771447716" },
-            { name: "Helpline: 6223451244", href: "tel:+916223451244" },
+            { name: "Helpline: 9771447716", href: "tel:+919771447716" },
             { name: t("nav.bookAppointment"), href: "/appointment" },
             { name: t("footer.privacy"), href: "/privacy" },
             { name: t("footer.terms"), href: "/terms" },
