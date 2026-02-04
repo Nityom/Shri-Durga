@@ -26,7 +26,7 @@ const getContactInfo = (t: (key: string) => string) => [
     {
         icon: Phone,
         title: t("contactPage.phone"),
-        value: "87891 86308",
+        value: "6223451244",
         subtitle: t("contactPage.monSun")
     },
     {
