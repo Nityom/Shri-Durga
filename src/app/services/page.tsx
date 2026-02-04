@@ -175,8 +175,8 @@ export default function ServicesPage() {
                             {t("cta.description")}
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="tel:+919771447716" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer">
-                                {t("hero.emergencyCall")}: 9771447716
+                            <Link href="tel:+918789186308" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer">
+                                {t("hero.emergencyCall")}: 87891 86308
                             </Link>
                         </div>
                     </motion.div>

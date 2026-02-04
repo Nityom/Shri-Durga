@@ -210,7 +210,7 @@ export default function DoctorsPage() {
                             {t("cta.description")}
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="tel:+919771447716" className="btn-secondary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 cursor-pointer">
+                            <Link href="tel:+918789186308" className="btn-secondary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 cursor-pointer">
                                 <Phone size={18} /> {t("contactPage.phoneTitle")}
                             </Link>
                             <Link href="/appointment" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer">

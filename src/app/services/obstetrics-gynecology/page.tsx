@@ -33,7 +33,7 @@ export default function ObstetricsGynecologyPage() {
                                 <Link href="/appointment" className="btn-secondary">
                                     {t("gynecology.bookAppointment")}
                                 </Link>
-                                <Link href="tel:+919771447716" className="btn-outline flex items-center">
+                                <Link href="tel:+918789186308" className="btn-outline flex items-center">
                                     <Phone size={18} className="mr-2" />
                                     {t("gynecology.callNow")}
                                 </Link>
@@ -191,9 +191,9 @@ export default function ObstetricsGynecologyPage() {
                             <Calendar size={18} className="mr-2" />
                             {t("gynecology.bookAppointment")}
                         </Link>
-                        <Link href="tel:+919771447716" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors">
+                        <Link href="tel:+918789186308" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors">
                             <Phone size={18} />
-                            9771447716
+                            87891 86308
                         </Link>
                     </div>
                 </div>

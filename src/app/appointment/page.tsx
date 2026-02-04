@@ -27,7 +27,7 @@ const timeSlots = [
 ]
 
 const sendWhatsAppMessage = async (message: string) => {
-    const whatsappNumber = "+919771447716"
+    const whatsappNumber = "+918789186308"
     const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`
     window.open(url, "_blank")
 }

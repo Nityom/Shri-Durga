@@ -57,8 +57,8 @@ export const Hero = () => {
                             <Link href="/appointment" className="btn-secondary">
                                 {t("hero.bookAppointment")}
                             </Link>
-                            <Link href="tel:+919771447716" className="btn-outline">
-                                {t("hero.emergencyCall")}: 9771447716
+                            <Link href="tel:+918789186308" className="btn-outline">
+                                {t("hero.emergencyCall")}: 87891 86308
                             </Link>
                         </div>
 

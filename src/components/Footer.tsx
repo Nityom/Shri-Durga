@@ -22,8 +22,8 @@ export const Footer = () => {
             { name: t("nav.services"), href: "/services" },
         ],
         [t("footer.contactUs")]: [
-            { name: `${t("hero.emergencyCall")}: 9771447716`, href: "tel:+919771447716" },
-            { name: "Helpline: 9771447716", href: "tel:+919771447716" },
+            { name: `${t("hero.emergencyCall")}: 87891 86308`, href: "tel:+918789186308" },
+            { name: "Helpline: 87891 86308", href: "tel:+918789186308" },
             { name: t("nav.bookAppointment"), href: "/appointment" },
             { name: t("footer.privacy"), href: "/privacy" },
             { name: t("footer.terms"), href: "/terms" },

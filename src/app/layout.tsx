@@ -87,7 +87,7 @@ export default function RootLayout({
     "url": "https://www.shridurgahospital.in",
     "logo": "https://www.shridurgahospital.in/ShriDurgaLogoo.png",
     "image": "https://www.shridurgahospital.in/og-image.png",
-    "telephone": "+91-9771447716",
+    "telephone": "+91-8789186308",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Thana Road, Kanti, Ward No-17",

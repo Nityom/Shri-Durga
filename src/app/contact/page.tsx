@@ -20,13 +20,13 @@ const getContactInfo = (t: (key: string) => string) => [
     {
         icon: Phone,
         title: t("contactPage.emergency"),
-        value: "9771447716",
+        value: "87891 86308",
         subtitle: t("contactPage.available")
     },
     {
         icon: Phone,
         title: t("contactPage.phone"),
-        value: "9771447716",
+        value: "87891 86308",
         subtitle: t("contactPage.monSun")
     },
     {
@@ -64,7 +64,7 @@ const itemVariants = {
 }
 
 const sendWhatsAppMessage = async (message: string) => {
-    const whatsappNumber = "+919771447716";
+    const whatsappNumber = "+918789186308";
     const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
 };

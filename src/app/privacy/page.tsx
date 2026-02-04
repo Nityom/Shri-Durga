@@ -133,8 +133,8 @@ export default function PrivacyPage() {
                                     <p className="font-semibold text-primary">Shri Durga Hospital - Privacy Office</p>
                                     <p className="text-muted-foreground">Thana Road, Kanti, Ward-17, Muzaffarpur, Bihar 843109</p>
                                     <p className="text-muted-foreground">Email: privacy@kailashhospital.com</p>
-                                    <p className="text-muted-foreground">Helpline & Emergency: +91 9771447716</p>
-                                    <p className="text-muted-foreground">WhatsApp Appointment: 9771447716</p>
+                                    <p className="text-muted-foreground">Helpline & Emergency: +91 87891 86308</p>
+                                    <p className="text-muted-foreground">WhatsApp Appointment: 87891 86308</p>
                                     <p className="text-muted-foreground">After filling all the details, they should be sent to the WhatsApp number provided.</p>
                                 </div>
                             </div>

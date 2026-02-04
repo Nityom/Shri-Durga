@@ -20,8 +20,8 @@ export const CTA = () => {
                         {t("cta.description")}
                     </p>
                     <div className="flex flex-wrap gap-4 justify-center">
-                        <Link href="tel:+919771447716" className="btn-secondary inline-block">
-                            {t("hero.emergencyCall")}: 9771447716
+                        <Link href="tel:+918789186308" className="btn-secondary inline-block">
+                            {t("hero.emergencyCall")}: 87891 86308
                         </Link>
                         <Link href="/appointment" className="btn-outline inline-block bg-transparent border-white text-white hover:bg-white hover:text-primary">
                             {t("cta.button")}

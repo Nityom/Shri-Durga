@@ -247,8 +247,8 @@ export default function FAQPage() {
                             <Link href="/contact" className="btn-secondary text-white px-8 py-4 rounded-full font-bold cursor-pointer">
                                 {t("servicesPage.contactUs")}
                             </Link>
-                            <Link href="tel:+919771447716" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer">
-                                <Phone size={18} /> 9771447716
+                            <Link href="tel:+918789186308" className="bg-white text-primary px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 hover:bg-blue-50 transition-colors cursor-pointer">
+                                <Phone size={18} /> 87891 86308
                             </Link>
                         </div>
                     </div>
