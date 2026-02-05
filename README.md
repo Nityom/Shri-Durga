@@ -24,7 +24,6 @@ A premium, responsive healthcare website built with **Next.js 16**, **Tailwind C
 | [Lucide React](https://lucide.dev/) | Latest | Icons |
 | [React Select](https://react-select.com/) | Latest | Dropdowns |
 
-## 📁 Project Structure
 
 ```
 kailash_hospital/
@@ -67,11 +66,7 @@ kailash_hospital/
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/kailash-hospital.git
-   cd kailash-hospital
-   ```
+
 
 2. **Install dependencies**
    ```bash
@@ -156,46 +151,6 @@ No required environment variables. The app auto-detects Vercel URLs:
 metadataBase: new URL(
   process.env.VERCEL_URL 
     ? `https://${process.env.VERCEL_URL}` 
-    : "https://kailash.vercel.app"
+    : "https://shri-durga.vercel.app/"
 )
 ```
-
-## 📱 Screenshots
-
-<details>
-<summary>View Screenshots</summary>
-
-### Light Mode
-![Light Mode](./public/images/screenshot-light.png)
-
-### Dark Mode
-![Dark Mode](./public/images/screenshot-dark.png)
-
-### Mobile View
-![Mobile](./public/images/screenshot-mobile.png)
-
-</details>
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Lucide Icons](https://lucide.dev/) for the beautiful icons
-- [Unsplash](https://unsplash.com/) for placeholder images
-- [Google Fonts](https://fonts.google.com/) for typography
-
----
-
-<p align="center">
-  Made with ❤️ for modern healthcare
-</p>

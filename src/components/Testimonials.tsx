@@ -105,14 +105,14 @@ export const Testimonials = () => {
                                 </blockquote>
 
                                 <div className="flex items-center justify-center gap-4">
-                                    <div className="w-12 h-12 bg-slate-700 rounded-full overflow-hidden relative">
+                                    {/* <div className="w-12 h-12 bg-slate-700 rounded-full overflow-hidden relative">
                                         <Image
                                             src="/images/doctor-1.png"
                                             alt={testimonials[currentIndex].name}
                                             fill
                                             className="object-cover"
                                         />
-                                    </div>
+                                    </div> */}
                                     <div className="text-left">
                                         <div className="font-bold text-white font-serif">{testimonials[currentIndex].name}</div>
                                         <div className="text-sm text-slate-400 font-sans">{testimonials[currentIndex].role}</div>
