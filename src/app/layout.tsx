@@ -21,7 +21,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://kailash.vercel.app"),
+  metadataBase: new URL(process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://shridurgahospital.in"),
   title: "Shri Durga Hospital - 10+ Years of Quality Healthcare | Multi-Specialty Clinic in Kanti, Muzaffarpur",
   description: "Shri Durga Hospital located in Kanti, Muzaffarpur offers quality-focused, cost-effective healthcare with 10+ years of experience. Expert specialized doctors providing 24/7 emergency care. General Surgery, Gynecology, Pediatrics, Anesthesia, Orthopedics.",
   keywords: [
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     description: "Quality-focused & cost-effective healthcare with 10+ years of experience. Expert specialized doctors providing 24/7 emergency care in Kanti, Muzaffarpur, Bihar.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/ShriDurgaLogoo.png",
         width: 1200,
         height: 630,
         alt: "Shri Durga Hospital - Multi-Specialty Clinic in Muzaffarpur",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shri Durga Hospital - 10+ Years Quality Healthcare | Specialized Doctors in Kanti",
     description: "Cost-effective healthcare | 10+ years experience | Specialized doctors | 24/7 emergency care in Kanti, Muzaffarpur, Bihar",
-    images: ["/og-image.png"],
+    images: ["/ShriDurgaLogoo.png"],
     creator: "@shridurgahospital",
   },
   robots: {
@@ -142,9 +142,9 @@ export default function RootLayout({
     },
     "medicalSpecialty": ["Cardiology", "Neurology", "Orthopedics", "Emergency Medicine", "Radiology"],
     "sameAs": [
-      "https://facebook.com/kailashhospital",
-      "https://twitter.com/kailashhospital",
-      "https://instagram.com/kailashhospital"
+      "https://facebook.com/shridurgahospital",
+      "https://twitter.com/shridurgahospital",
+      "https://instagram.com/shridurgahospital"
     ]
   };
 
