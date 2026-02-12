@@ -32,7 +32,7 @@ const getContactInfo = (t: (key: string) => string) => [
     {
         icon: Mail,
         title: t("contactPage.email"),
-        value: "info@shridurgahospital.in",
+        value: "shriidurgahospital@gmail.com",
         subtitle: t("contactPage.reply")
     },
     {
