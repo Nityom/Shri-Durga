@@ -42,7 +42,7 @@ export const About = () => {
                         className="hidden lg:block absolute top-1/2 -left-12 -translate-y-1/2 w-48 h-32 bg-muted rounded-lg -rotate-6 overflow-hidden shadow-lg border-4 border-background"
                     >
                         <Image
-                            src="/images/about-1.png"
+                            src="/imagess/8image.jpeg"
                             alt="Medical Technology"
                             fill
                             className="object-cover"
@@ -56,7 +56,7 @@ export const About = () => {
                         className="hidden lg:block absolute top-1/2 -right-12 -translate-y-1/2 w-48 h-32 bg-muted rounded-lg rotate-6 overflow-hidden shadow-lg border-4 border-background"
                     >
                         <Image
-                            src="/images/about-2.png"
+                            src="/imagess/9image.jpeg"
                             alt="Patient Care"
                             fill
                             className="object-cover"

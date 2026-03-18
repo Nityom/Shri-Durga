@@ -16,7 +16,7 @@ export const Hero = () => {
                             <div className="flex -space-x-2">
                                 <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
                                     <Image
-                                        src="/images/doctor-1.png"
+                                        src="/imagess/4image.jpeg"
                                         alt="Doctor"
                                         fill
                                         className="object-cover"
@@ -24,7 +24,7 @@ export const Hero = () => {
                                 </div>
                                 <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
                                     <Image
-                                        src="/images/doctor-2.png"
+                                        src="/imagess/12image.jpeg"
                                         alt="Doctor"
                                         fill
                                         className="object-cover"
@@ -32,7 +32,7 @@ export const Hero = () => {
                                 </div>
                                 <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
                                     <Image
-                                        src="/images/doctor-3.png"
+                                        src="/imagess/13image.jpeg"
                                         alt="Doctor"
                                         fill
                                         className="object-cover"
@@ -78,13 +78,13 @@ export const Hero = () => {
                         </div>
                     </div>
 
-                    <div className="relative h-[500px] lg:h-[600px]">
+                    <div className="relative h-[320px] lg:h-[420px]">
                         <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-primary">
                             <Image
-                                src="/images/hospital.png"
+                                src="/imagess/1image.png"
                                 alt="Medical Professional"
                                 fill
-                                className="object-cover object-top"
+                                className="object-cover object-center"
                                 priority
                             />
                         </div>

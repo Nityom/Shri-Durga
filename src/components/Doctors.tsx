@@ -8,27 +8,27 @@ const getDoctors = (t: (key: string) => string) => [
     {
         name: t("doctors.doctor1Name"),
         role: t("doctors.doctor1Role"),
-        image: "/images/doctor-1.png",
+        image: "/imagess/doctor-1.png",
     },
     {
         name: t("doctors.doctor2Name"),
         role: t("doctors.doctor2Role"),
-        image: "/images/doctor-2.png",
+        image: "/imagess/doctor-2.png",
     },
     {
         name: t("doctors.doctor3Name"),
         role: t("doctors.doctor3Role"),
-        image: "/images/doctor-3.png",
+        image: "/imagess/doctor-3.png",
     },
     {
         name: t("doctors.doctor4Name"),
         role: t("doctors.doctor4Role"),
-        image: "/images/doctor-4.png",
+        image: "/imagess/doctor-4.png",
     },
     {
         name: t("doctors.doctor5Name"),
         role: t("doctors.doctor5Role"),
-        image: "/images/doctor-5.png",
+        image: "/imagess/doctor-5.png",
     },
 ]
 
@@ -54,22 +54,31 @@ export const Doctors = () => {
                     </Link>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    {doctors.map((doctor, index) => (
-                        <div key={index} className="medical-card text-center">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-3 bg-gray-200">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                    {doctors.map((doctor, index) => {
+                        const nameParts = doctor.name.trim().split(/\s+/)
+                        const firstLine = nameParts.slice(0, -1).join(" ") || doctor.name
+                        const secondLine = nameParts.length > 1 ? nameParts[nameParts.length - 1] : ""
+
+                        return (
+                        <div key={index} className="medical-card text-center h-full flex flex-col items-center">
+                            <div className="w-40 h-40 mx-auto rounded-full overflow-hidden mb-3 bg-gray-200">
                                 <Image
                                     src={doctor.image}
                                     alt={doctor.name}
-                                    width={96}
-                                    height={96}
+                                    width={160}
+                                    height={160}
                                     className="object-cover w-full h-full"
                                 />
                             </div>
-                            <h3 className="text-base font-bold text-primary mb-1">{doctor.name}</h3>
-                            <p className="text-xs text-secondary font-semibold">{doctor.role}</p>
+                            <h3 className="text-sm font-semibold text-primary mb-1 w-full leading-tight">
+                                <span className="block">{firstLine}</span>
+                                {secondLine ? <span className="block">{secondLine}</span> : null}
+                            </h3>
+                            <p className="text-xs text-secondary font-semibold mt-auto">{doctor.role}</p>
                         </div>
-                    ))}
+                        )
+                    })}
                 </div>
             </div>
         </section>

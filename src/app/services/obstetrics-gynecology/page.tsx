@@ -41,7 +41,7 @@ export default function ObstetricsGynecologyPage() {
                         </div>
                         <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/images/obstetrics.png"
+                                src="/imagess/3image.jpeg"
                                 alt={t("gynecology.badge")}
                                 fill
                                 className="object-cover"
@@ -57,7 +57,7 @@ export default function ObstetricsGynecologyPage() {
                     <div className="medical-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-start">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200 shrink-0">
                             <Image
-                                src="/images/doctor-2.png"
+                                src="/imagess/12image.jpeg"
                                 alt={t("gynecology.doctorName")}
                                 width={96}
                                 height={96}

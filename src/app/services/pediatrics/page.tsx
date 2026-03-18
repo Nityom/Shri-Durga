@@ -41,7 +41,7 @@ export default function PediatricsPage() {
                         </div>
                         <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/images/pediatrics.png"
+                                src="/imagess/11image.jpeg"
                                 alt={t("pediatrics.badge")}
                                 fill
                                 className="object-cover"
@@ -57,7 +57,7 @@ export default function PediatricsPage() {
                     <div className="medical-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-start">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200 shrink-0">
                             <Image
-                                src="/images/doctor-3.png"
+                                src="/imagess/13image.jpeg"
                                 alt={t("pediatrics.doctorName")}
                                 width={96}
                                 height={96}

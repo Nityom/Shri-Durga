@@ -16,7 +16,7 @@ const getDoctors = (t: (key: string) => string) => [
         specialty: t("services.generalSurgery"),
         qualification: t("service.generalSurgeryDoctor"),
         experience: t("doctor.expertSurgeon"),
-        image: "/images/doctor-1.png",
+        image: "/imagess/doctor-1.png",
         rating: 4.9,
         reviews: 150
     },
@@ -26,7 +26,7 @@ const getDoctors = (t: (key: string) => string) => [
         specialty: t("services.gynecology"),
         qualification: t("service.gynecologyDoctor"),
         experience: t("doctor.specialist"),
-        image: "/images/doctor-2.png",
+        image: "/imagess/doctor-2.png",
         rating: 4.9,
         reviews: 180
     },
@@ -36,7 +36,7 @@ const getDoctors = (t: (key: string) => string) => [
         specialty: t("services.pediatrics"),
         qualification: t("service.pediatricsDoctor"),
         experience: t("doctor.childSpecialist"),
-        image: "/images/doctor-3.png",
+        image: "/imagess/doctor-3.png",
         rating: 4.8,
         reviews: 120
     },
@@ -46,7 +46,7 @@ const getDoctors = (t: (key: string) => string) => [
         specialty: t("services.anesthesia"),
         qualification: t("service.anesthesiaDoctor"),
         experience: t("doctor.criticalCareSpecialist"),
-        image: "/images/doctor-4.png",
+        image: "/imagess/doctor-4.png",
         rating: 4.8,
         reviews: 100
     },
@@ -56,7 +56,7 @@ const getDoctors = (t: (key: string) => string) => [
         specialty: t("services.orthopedics"),
         qualification: t("service.orthopedicsDoctor"),
         experience: t("doctor.orthopedicSpecialist"),
-        image: "/images/doctor-5.png",
+        image: "/imagess/doctor-5.png",
         rating: 4.9,
         reviews: 140
     },

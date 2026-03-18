@@ -72,12 +72,12 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <div className="relative">
-                            <div className="aspect-square rounded-2xl overflow-hidden shadow-xl bg-gray-200">
+                            <div className="aspect-video rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                                 <Image
-                                    src="/images/about-hero.png"
+                                    src="/imagess/1image.png"
                                     alt="Shri Durga Hospital Building"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover object-center"
                                 />
                             </div>
                             <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-6 shadow-xl border border-gray-200">
