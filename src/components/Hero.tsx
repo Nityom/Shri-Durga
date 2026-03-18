@@ -16,7 +16,7 @@ export const Hero = () => {
                             <div className="flex -space-x-2">
                                 <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
                                     <Image
-                                        src="/imagess/4image.jpeg"
+                                        src="/imagess/doctor-1.png"
                                         alt="Doctor"
                                         fill
                                         className="object-cover"
@@ -24,7 +24,7 @@ export const Hero = () => {
                                 </div>
                                 <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
                                     <Image
-                                        src="/imagess/12image.jpeg"
+                                        src="/imagess/doctor-2.png"
                                         alt="Doctor"
                                         fill
                                         className="object-cover"
@@ -32,7 +32,7 @@ export const Hero = () => {
                                 </div>
                                 <div className="w-8 h-8 rounded-full border-2 border-white overflow-hidden relative bg-gray-200">
                                     <Image
-                                        src="/imagess/13image.jpeg"
+                                        src="/imagess/doctor-3.png"
                                         alt="Doctor"
                                         fill
                                         className="object-cover"

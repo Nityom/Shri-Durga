@@ -68,7 +68,7 @@ export const Doctors = () => {
                                     alt={doctor.name}
                                     width={160}
                                     height={160}
-                                    className="object-cover w-full h-full"
+                                    className="object-contain w-full h-full"
                                 />
                             </div>
                             <h3 className="text-sm font-semibold text-primary mb-1 w-full leading-tight">
