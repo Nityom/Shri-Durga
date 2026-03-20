@@ -21,7 +21,7 @@ const getDepartmentOptions = (): DepartmentOption[] => [
     { serviceKey: "orthopedics", available: true, doctorNameKey: "doctors.doctor5Name" },
     { serviceKey: "cardiology", available: false },
     { serviceKey: "neurology", available: false },
-    { serviceKey: "generalMedicine", available: true },
+    { serviceKey: "generalMedicine", available: true, doctorNameKey: "doctors.doctor4Name" },
     { serviceKey: "dermatology", available: false },
     { serviceKey: "ophthalmology", available: false },
     { serviceKey: "ent", available: false },
