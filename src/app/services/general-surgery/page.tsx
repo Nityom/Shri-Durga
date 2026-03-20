@@ -39,9 +39,9 @@ export default function GeneralSurgeryPage() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
+                        <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/imagess/7image.jpeg"
+                                src="/imagess/dept-1.png"
                                 alt={t("generalSurgery.badge")}
                                 fill
                                 className="object-cover"
@@ -57,7 +57,7 @@ export default function GeneralSurgeryPage() {
                     <div className="medical-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-start">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200 shrink-0">
                             <Image
-                                src="/imagess/4image.jpeg"
+                                src="/imagess/doctor-1.png"
                                 alt={t("generalSurgery.doctorName")}
                                 width={96}
                                 height={96}

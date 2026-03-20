@@ -39,9 +39,9 @@ export default function AnesthesiaCriticalCarePage() {
                                 </Link>
                             </div>
                         </div>
-                        <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl bg-gray-200">
+                        <div className="relative aspect-[4/5] w-full max-w-md mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-xl bg-gray-200">
                             <Image
-                                src="/imagess/6image.jpeg"
+                                src="/imagess/dept-4.png"
                                 alt={t("anesthesia.badge")}
                                 fill
                                 className="object-cover"
@@ -57,7 +57,7 @@ export default function AnesthesiaCriticalCarePage() {
                     <div className="medical-card rounded-2xl p-8 flex flex-col md:flex-row gap-6 items-start">
                         <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-200 shrink-0">
                             <Image
-                                src="/imagess/5image.jpeg"
+                                src="/imagess/doctor-4.png"
                                 alt={t("anesthesia.doctorName")}
                                 width={96}
                                 height={96}

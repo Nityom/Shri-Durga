@@ -81,7 +81,7 @@ export const Hero = () => {
                     <div className="relative h-[320px] lg:h-[420px]">
                         <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl bg-primary">
                             <Image
-                                src="/imagess/1image.png"
+                                src="/imagess/1image.jpeg"
                                 alt="Medical Professional"
                                 fill
                                 className="object-cover object-center"
