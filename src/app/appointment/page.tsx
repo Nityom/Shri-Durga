@@ -7,17 +7,25 @@ import { useState } from "react"
 import { Calendar, Clock, User, Phone, Mail, FileText, CheckCircle2 } from "lucide-react"
 import { useLanguage } from "@/contexts/LanguageContext"
 
-const getDepartments = (t: (key: string) => string) => [
-    t("services.cardiology"),
-    t("services.neurology"),
-    t("services.orthopedics"),
-    t("services.pediatrics"),
-    t("services.generalMedicine"),
-    t("services.dermatology"),
-    t("services.ophthalmology"),
-    t("services.ent"),
-    t("services.gynecology"),
-    t("services.oncology")
+type DepartmentOption = {
+    serviceKey: string
+    available: boolean
+    doctorNameKey?: string
+}
+
+const getDepartmentOptions = (): DepartmentOption[] => [
+    { serviceKey: "generalSurgery", available: true, doctorNameKey: "doctors.doctor1Name" },
+    { serviceKey: "gynecology", available: true, doctorNameKey: "doctors.doctor2Name" },
+    { serviceKey: "pediatrics", available: true, doctorNameKey: "doctors.doctor3Name" },
+    { serviceKey: "anesthesia", available: true, doctorNameKey: "doctors.doctor4Name" },
+    { serviceKey: "orthopedics", available: true, doctorNameKey: "doctors.doctor5Name" },
+    { serviceKey: "cardiology", available: false },
+    { serviceKey: "neurology", available: false },
+    { serviceKey: "generalMedicine", available: true },
+    { serviceKey: "dermatology", available: false },
+    { serviceKey: "ophthalmology", available: false },
+    { serviceKey: "ent", available: false },
+    { serviceKey: "oncology", available: false }
 ]
 
 const timeSlots = [
@@ -34,11 +42,17 @@ const sendWhatsAppMessage = async (message: string) => {
 
 export default function AppointmentPage() {
     const { t } = useLanguage()
-    const departments = getDepartments(t)
+    const departmentOptions = getDepartmentOptions()
+
+    const getDepartmentName = (serviceKey: string) => {
+        if (!serviceKey) return ""
+        return t(`services.${serviceKey}`)
+    }
     
     const [step, setStep] = useState(1)
     const [formData, setFormData] = useState({
         department: "",
+        doctor: "",
         date: "",
         time: "",
         name: "",
@@ -55,7 +69,7 @@ export default function AppointmentPage() {
         e.preventDefault()
         setIsSubmitting(true)
 
-        const message = `Appointment Details:\n\nDepartment: ${formData.department}\nDate: ${formData.date}\nTime: ${formData.time}\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAge: ${formData.age}\nGender: ${formData.gender}\nReason: ${formData.reason}`
+        const message = `Appointment Details:\n\nDepartment: ${getDepartmentName(formData.department)}\nDoctor: ${formData.doctor}\nDate: ${formData.date}\nTime: ${formData.time}\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAge: ${formData.age}\nGender: ${formData.gender}\nReason: ${formData.reason}`
 
         await sendWhatsAppMessage(message)
         setSubmitted(true)
@@ -66,8 +80,18 @@ export default function AppointmentPage() {
         setFormData(prev => ({ ...prev, [field]: value }))
     }
 
+    const handleDepartmentSelect = (department: DepartmentOption) => {
+        if (!department.available) return
+
+        setFormData(prev => ({
+            ...prev,
+            department: department.serviceKey,
+            doctor: department.doctorNameKey ? t(department.doctorNameKey) : t("appointmentPage.doctorTBA")
+        }))
+    }
+
     const canProceed = () => {
-        if (step === 1) return formData.department && formData.date && formData.time
+        if (step === 1) return formData.department && formData.doctor && formData.date && formData.time
         if (step === 2) return formData.name && formData.email && formData.phone && formData.age && formData.gender
         return true
     }
@@ -96,7 +120,11 @@ export default function AppointmentPage() {
                             <div className="space-y-3 text-sm">
                                 <div className="flex justify-between">
                                     <span className="text-slate-500">{t("appointmentPage.department")}</span>
-                                    <span className="font-semibold text-slate-900">{formData.department}</span>
+                                            <span className="font-semibold text-slate-900">{getDepartmentName(formData.department)}</span>
+                                        </div>
+                                        <div className="flex justify-between">
+                                            <span className="text-slate-500">{t("appointmentPage.assignedDoctor")}</span>
+                                            <span className="font-semibold text-slate-900">{formData.doctor}</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span className="text-slate-500">{t("appointmentPage.preferredDate")}</span>
@@ -188,21 +216,36 @@ export default function AppointmentPage() {
                                 <div>
                                     <label className="block text-lg font-bold text-slate-900 mb-4">{t("appointmentPage.selectDepartment")}</label>
                                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                                        {departments.map((dept) => (
+                                        {departmentOptions.map((dept) => (
                                             <button
-                                                key={dept}
+                                                key={dept.serviceKey}
                                                 type="button"
-                                                onClick={() => updateForm('department', dept)}
+                                                disabled={!dept.available}
+                                                onClick={() => handleDepartmentSelect(dept)}
                                                 className={`p-4 rounded-xl border-2 text-sm font-semibold transition-all ${
-                                                    formData.department === dept
+                                                    formData.department === dept.serviceKey
                                                         ? 'border-primary bg-primary text-white shadow-md'
-                                                        : 'border-slate-200 hover:border-primary/50 hover:bg-primary/5 text-slate-700 bg-white'
+                                                        : dept.available
+                                                            ? 'border-slate-200 hover:border-primary/50 hover:bg-primary/5 text-slate-700 bg-white'
+                                                            : 'border-slate-200 text-slate-400 bg-slate-50 cursor-not-allowed'
                                                     }`}
                                             >
-                                                {dept}
+                                                <span className="block">{getDepartmentName(dept.serviceKey)}</span>
+                                                {!dept.available && (
+                                                    <span className="block text-xs mt-1 font-medium">
+                                                        {t("appointmentPage.availableSoon")}
+                                                    </span>
+                                                )}
                                             </button>
                                         ))}
                                     </div>
+
+                                    {formData.doctor && (
+                                        <div className="mt-4 rounded-xl border border-blue-200 bg-blue-50 p-4">
+                                            <p className="text-sm text-slate-600">{t("appointmentPage.assignedDoctor")}</p>
+                                            <p className="font-semibold text-slate-900">{formData.doctor}</p>
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div>
@@ -351,7 +394,11 @@ export default function AppointmentPage() {
                                         <div className="space-y-4">
                                             <div>
                                                 <span className="text-sm text-slate-500">{t("appointmentPage.department")}</span>
-                                                <p className="font-semibold text-slate-900">{formData.department}</p>
+                                                <p className="font-semibold text-slate-900">{getDepartmentName(formData.department)}</p>
+                                            </div>
+                                            <div>
+                                                <span className="text-sm text-slate-500">{t("appointmentPage.assignedDoctor")}</span>
+                                                <p className="font-semibold text-slate-900">{formData.doctor}</p>
                                             </div>
                                             <div>
                                                 <span className="text-sm text-slate-500">{t("appointmentPage.dateTime")}</span>
