@@ -87,7 +87,7 @@ const socialLinks = [
 
 export const Footer = () => {
     const { t } = useLanguage()
-    
+
     const footerLinks = {
         [t("footer.quickLinks")]: [
             { name: t("nav.about"), href: "/about" },
@@ -117,7 +117,7 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     {/* About Section */}
                     <div>
-                        <h3 className="text-xl font-bold mb-4" style={{color: 'white'}}>Shri Durga Hospital</h3>
+                        <h3 className="text-xl font-bold mb-4" style={{ color: 'white' }}>Shri Durga Hospital</h3>
                         <p className="text-white text-sm mb-4 leading-relaxed">
                             {t("footer.aboutText")}
                         </p>
@@ -146,7 +146,7 @@ export const Footer = () => {
                     {/* Links Sections */}
                     {Object.entries(footerLinks).map(([category, links]) => (
                         <div key={category}>
-                            <h3 className="font-bold mb-4" style={{color: 'white'}}>{category}</h3>
+                            <h3 className="font-bold mb-4" style={{ color: 'white' }}>{category}</h3>
                             <ul className="space-y-2">
                                 {links.map((link) => (
                                     <li key={link.name}>
@@ -169,7 +169,7 @@ export const Footer = () => {
                         © {new Date().getFullYear()} Shri Durga Hospital. {t("footer.rights")}
                     </p>
                     <p className="text-white text-xs text-center md:text-right">
-                        Thana Road, Kanti, Ward No-17, Muzaffarpur-843109, Bihar
+                        Thana Road, Kanti, Ward No-17, Muzaffarpur-843109, Bihar.
                     </p>
                 </div>
             </div>
